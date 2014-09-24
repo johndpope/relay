@@ -1,0 +1,15 @@
+PODS:
+  - MQTTKit (0.1.0-next)
+
+DEPENDENCIES:
+  - MQTTKit (from `https://github.com/256dpi/MQTTKit.git`, branch `fix-osx`)
+
+EXTERNAL SOURCES:
+  MQTTKit:
+    :branch: fix-osx
+    :git: https://github.com/256dpi/MQTTKit.git
+
+SPEC CHECKSUMS:
+  MQTTKit: e91eb2cbbd8bf4a40ae06ccab8f3290cdb40c0e2
+
+COCOAPODS: 0.33.1

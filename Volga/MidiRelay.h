@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MQTTKit.h>
+#import <MIKMIDI.h>
 
 @interface MidiRelay : NSObject
+
+@property (strong) NSURL *namespaceUri;
+@property (strong) MQTTClient *client;
+@property (strong) MIKMIDISourceEndpoint *source;
+@property (strong) MIKMIDIDestinationEndpoint *destination;
+
+- (void)setup:(NSString*)namespaceURI andSource:(MIKMIDISourceEndpoint*)source andDestination:(MIKMIDIDestinationEndpoint*)destination;
 
 @end

@@ -14,8 +14,29 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {}
 
-- (IBAction)startMidiRelay:(id)sender {
+- (void)awakeFromNib {
+  self.deviceManager = [MIKMIDIDeviceManager sharedDeviceManager];
   
+  self.statusLabel.stringValue = @"";
+  
+  [self.sourcesPopUp removeAllItems];
+  [self.destinationsPopUp removeAllItems];
+  
+  for (MIKMIDISourceEndpoint * source in [self.deviceManager virtualSources]) {
+    [self.sourcesPopUp addItemWithTitle:source.name];
+  }
+  
+  for (MIKMIDIDestinationEndpoint * destination in [self.deviceManager virtualDestinations]) {
+    [self.destinationsPopUp addItemWithTitle:destination.name];
+  }
+}
+
+- (IBAction)startMidiRelay:(id)sender {
+  MIKMIDISourceEndpoint * source = [self.deviceManager.virtualSources objectAtIndex:self.sourcesPopUp.indexOfSelectedItem];
+  MIKMIDIDestinationEndpoint * destination = [self.deviceManager.virtualDestinations objectAtIndex:self.destinationsPopUp.indexOfSelectedItem];
+  
+  self.currentMidiRelay = [MidiRelay alloc];
+  [self.currentMidiRelay setup:self.uriTextField.stringValue andSource:source andDestination:destination];
 }
 
 @end

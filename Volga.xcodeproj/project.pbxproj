@@ -13,6 +13,9 @@
 		524A7E2B19D3412300BD55BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524A7E2A19D3412300BD55BE /* Images.xcassets */; };
 		524A7E2E19D3412300BD55BE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A7E2C19D3412300BD55BE /* MainMenu.xib */; };
 		524A7E4519D3448000BD55BE /* MidiRelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E4419D3448000BD55BE /* MidiRelay.m */; };
+		5276065F19DD687700E50DB3 /* VideoRelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5276065E19DD687700E50DB3 /* VideoRelay.m */; };
+		5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066019DD6A2A00E50DB3 /* AVFoundation.framework */; };
+		5276066319DD6A2A00E50DB3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066119DD6A2A00E50DB3 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,10 @@
 		524A7E2D19D3412300BD55BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		524A7E4319D3448000BD55BE /* MidiRelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiRelay.h; sourceTree = "<group>"; };
 		524A7E4419D3448000BD55BE /* MidiRelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiRelay.m; sourceTree = "<group>"; };
+		5276065D19DD687700E50DB3 /* VideoRelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRelay.h; sourceTree = "<group>"; };
+		5276065E19DD687700E50DB3 /* VideoRelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRelay.m; sourceTree = "<group>"; };
+		5276066019DD6A2A00E50DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5276066119DD6A2A00E50DB3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */,
+				5276066319DD6A2A00E50DB3 /* AVKit.framework in Frameworks */,
 				2BB04B5F75364C99B2900622 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,6 +53,8 @@
 		2220CFCEDE024AA2B84CDD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5276066019DD6A2A00E50DB3 /* AVFoundation.framework */,
+				5276066119DD6A2A00E50DB3 /* AVKit.framework */,
 				2D8B9D0EF59E451A8AEB7A88 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -77,6 +88,8 @@
 				524A7E2319D3412300BD55BE /* Supporting Files */,
 				524A7E4319D3448000BD55BE /* MidiRelay.h */,
 				524A7E4419D3448000BD55BE /* MidiRelay.m */,
+				5276065D19DD687700E50DB3 /* VideoRelay.h */,
+				5276065E19DD687700E50DB3 /* VideoRelay.m */,
 			);
 			path = Volga;
 			sourceTree = "<group>";
@@ -197,6 +210,7 @@
 				524A7E4519D3448000BD55BE /* MidiRelay.m in Sources */,
 				524A7E2919D3412300BD55BE /* AppDelegate.m in Sources */,
 				524A7E2619D3412300BD55BE /* main.m in Sources */,
+				5276065F19DD687700E50DB3 /* VideoRelay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

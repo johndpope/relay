@@ -38,7 +38,8 @@
     for (MIKMIDICommand *command in commands) {
       if(command.commandType == MIKMIDICommandTypeControlChange) {
         MIKMIDIControlChangeCommand *cc = (MIKMIDIControlChangeCommand*)command;
-        [self sendPairedMessageToTopic:@"/midi/in/control" andNumbers:@[[NSNumber numberWithUnsignedLong:cc.channel], [NSNumber numberWithUnsignedLong:cc.controllerNumber], [NSNumber numberWithUnsignedLong:cc.controllerValue]]];
+        NSString *topic = [NSString stringWithFormat:@"/midi/in/control/%lu", cc.controllerNumber];
+        [self sendPairedMessageToTopic:topic andNumbers:@[[NSNumber numberWithUnsignedLong:cc.channel], [NSNumber numberWithUnsignedLong:cc.controllerNumber], [NSNumber numberWithUnsignedLong:cc.controllerValue]]];
       } else if(command.commandType == MIKMIDICommandTypeNoteOn) {
         MIKMIDINoteOnCommand *noc = (MIKMIDINoteOnCommand*)command;
         [self sendPairedMessageToTopic:@"/midi/in/note/on" andNumbers:@[[NSNumber numberWithUnsignedLong:noc.channel], [NSNumber numberWithUnsignedLong:noc.note], [NSNumber numberWithUnsignedLong:noc.velocity]]];

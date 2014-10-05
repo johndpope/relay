@@ -8,48 +8,39 @@
 
 #import "AppDelegate.h"
 
+#import "MidiRelayConfigurationController.h"
+#import "VideoRelayConfigurationController.h"
+
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {}
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  self.midiRelayController = [[MidiRelayConfigurationController alloc]
+                              initWithNibName:@"MidiRelayConfiguration" bundle:nil];
+  self.midiRelayController.appDelegate = self;
+  self.videoRelayController = [[VideoRelayConfigurationController alloc]
+                               initWithNibName:@"VideoRelayConfiguration" bundle:nil];
+  self.videoRelayController.appDelegate = self;
+  
+  [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiRelayController]];
+  [self.tabView addTabViewItem:[self createTab:@"Video" withController:self.videoRelayController]];
+  
+  // TODO: Get rid of that hack:
+  [self.tabView selectLastTabViewItem:self];
+}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {}
 
-- (void)awakeFromNib {
-  self.deviceManager = [MIKMIDIDeviceManager sharedDeviceManager];
-  
-  self.statusLabel.stringValue = @"";
-  
-  [self.sourcesPopUp removeAllItems];
-  [self.destinationsPopUp removeAllItems];
-  
-  for (MIKMIDISourceEndpoint *source in [self.deviceManager virtualSources]) {
-    [self.sourcesPopUp addItemWithTitle:source.name];
-  }
-  
-  for (MIKMIDIDestinationEndpoint *destination in [self.deviceManager virtualDestinations]) {
-    [self.destinationsPopUp addItemWithTitle:destination.name];
-  }
-  
-  [self.videoSourcePopUp removeAllItems];
-  
-  for (AVCaptureDevice *device in [AVCaptureDevice devices]) {
-    [self.videoSourcePopUp addItemWithTitle:device.localizedName];
-  }
+- (NSTabViewItem*)createTab:(NSString*)label withController:(NSViewController*)controller
+{
+  NSTabViewItem *item = [[NSTabViewItem alloc] initWithIdentifier:nil];
+  [item setLabel:label];
+  [item setView:controller.view];
+  return item;
 }
 
-- (IBAction)startMidiRelay:(id)sender {
-  MIKMIDISourceEndpoint *source = [self.deviceManager.virtualSources objectAtIndex:self.sourcesPopUp.indexOfSelectedItem];
-  MIKMIDIDestinationEndpoint *destination = [self.deviceManager.virtualDestinations objectAtIndex:self.destinationsPopUp.indexOfSelectedItem];
-  
-  self.currentMidiRelay = [MidiRelay alloc];
-  [self.currentMidiRelay setup:self.uriTextField.stringValue andSource:source andDestination:destination];
-}
-
-- (IBAction)startVideoRelay:(id)sender {
-  AVCaptureDevice *source = [[AVCaptureDevice devices] objectAtIndex:self.videoSourcePopUp.indexOfSelectedItem];
-  
-  self.currentVideoRelay = [VideoRelay alloc];
-  [self.currentVideoRelay setup:self.uriTextField.stringValue andSource:source andPreview:self.videoPreview];
+- (NSString *)namespaceURI
+{
+  return self.uriTextField.stringValue;
 }
 
 @end

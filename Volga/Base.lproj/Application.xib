@@ -670,7 +670,7 @@
         </menu>
         <window title="Volga" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="945" y="551" width="500" height="200"/>
+            <rect key="contentRect" x="0.0" y="0.0" width="500" height="200"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="500" height="200"/>
             <view key="contentView" id="EiT-Mj-1SZ">
@@ -712,7 +712,7 @@
                     <constraint firstItem="7eV-To-Okl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="13" id="ruN-1M-3dx"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-312" y="-277"/>
+            <point key="canvasLocation" x="-312" y="-116"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="E1b-xT-ELs"/>
     </objects>

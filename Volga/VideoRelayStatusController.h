@@ -9,11 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface VideoRelayStatusController : NSWindowController
+@interface VideoRelayStatusController : NSWindowController <NSWindowDelegate>
 
 @property (weak) IBOutlet NSTextField *status;
 @property (weak) IBOutlet NSView *preview;
 
-- (void)runWithDevice:(AVCaptureDevice*)device andNamespaceURI:(NSString*)uri;
+@property (strong) AVCaptureDevice* device;
+@property (strong) NSString* uri;
 
 @end

@@ -10,6 +10,8 @@
 
 @interface VideoRelayStatusController ()
 @property (strong) AVCaptureSession *captureSession;
+@property (strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property (strong) NSArray *observers;
 @end
 
 @implementation VideoRelayStatusController
@@ -18,37 +20,45 @@
   [super windowDidLoad];
   
   self.status.stringValue = @"";
-}
 
-- (void)runWithDevice:(AVCaptureDevice *)device andNamespaceURI:(NSString *)uri
-{
-  self.window.title = [NSString stringWithFormat:@"Video Relay: %@", device.localizedName];
+  self.window.title = [NSString stringWithFormat:@"Video Relay: %@", self.device.localizedName];
   
   NSError *error;
   
-  AVCaptureDeviceInput *input = [[AVCaptureDeviceInput alloc] initWithDevice:device error:&error];
+  AVCaptureDeviceInput * input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
   
   self.captureSession = [[AVCaptureSession alloc] init];
+  self.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
   [self.captureSession addInput:input];
   
-  AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
-  previewLayer.frame = self.preview.bounds;
-  [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-  [self.preview.layer addSublayer:previewLayer];
+  self.preview.layer = [CALayer layer];
+  self.preview.layer.frame = self.preview.bounds;
+  self.preview.layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
+  self.preview.layer.borderColor = CGColorGetConstantColor(kCGColorBlack);
+  self.preview.layer.borderWidth = 1;
+  self.preview.wantsLayer = YES;
   
-  [[self.preview layer] setMasksToBounds:YES];
+  self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
+  self.previewLayer.frame = self.preview.bounds;
+  [self.preview.layer addSublayer:self.previewLayer];
   
-  AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-  NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
-  [stillImageOutput setOutputSettings:outputSettings];
-  
-  [self.captureSession addOutput:stillImageOutput];
+//  AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+//  NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+//  [stillImageOutput setOutputSettings:outputSettings];
+//  
+//  [self.captureSession addOutput:stillImageOutput];
   
   if(error) {
     [[NSAlert alertWithError:error] runModal];
   }
   
   [self.captureSession startRunning];
+}
+
+- (void)windowDidResize:(NSNotification *)notification
+{
+  self.preview.layer.frame = self.preview.bounds;
+  self.previewLayer.frame = self.preview.bounds;
 }
 
 @end

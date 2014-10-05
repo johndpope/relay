@@ -28,12 +28,13 @@
 
 - (IBAction)start:(id)sender
 {
-  VideoRelayStatusController* controller = [[VideoRelayStatusController alloc] initWithWindowNibName:@"VideoRelayStatus"];
-  
   AVCaptureDevice *device = [[AVCaptureDevice devices] objectAtIndex:self.source.indexOfSelectedItem];
   
+  VideoRelayStatusController* controller = [[VideoRelayStatusController alloc] initWithWindowNibName:@"VideoRelayStatus"];
+
+  controller.device = device;
+  controller.uri = self.appDelegate.namespaceURI.copy;
   [controller showWindow:self];
-  [controller runWithDevice:device andNamespaceURI:self.appDelegate.namespaceURI];
   
   [self.createdRelays addObject:controller];
 }

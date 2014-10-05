@@ -14,6 +14,7 @@
 @interface VideoRelayConfigurationController : NSViewController
 
 @property (weak) IBOutlet NSPopUpButton *source;
+@property (weak) IBOutlet NSTextField *topic;
 
 - (IBAction)start:(id)sender;
 

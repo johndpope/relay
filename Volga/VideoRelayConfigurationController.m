@@ -21,19 +21,20 @@
   
   [self.source removeAllItems];
   
-  for (AVCaptureDevice *device in [AVCaptureDevice devices]) {
+  for (AVCaptureDevice *device in [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo]) {
     [self.source addItemWithTitle:device.localizedName];
   }
 }
 
 - (IBAction)start:(id)sender
 {
-  AVCaptureDevice *device = [[AVCaptureDevice devices] objectAtIndex:self.source.indexOfSelectedItem];
+  AVCaptureDevice *device = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] objectAtIndex:self.source.indexOfSelectedItem];
   
   VideoRelayStatusController* controller = [[VideoRelayStatusController alloc] initWithWindowNibName:@"VideoRelayStatus"];
 
   controller.device = device;
-  controller.uri = self.appDelegate.namespaceURI.copy;
+  controller.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
+  controller.topic = self.topic.stringValue.copy;
   [controller showWindow:self];
   
   [self.createdRelays addObject:controller];

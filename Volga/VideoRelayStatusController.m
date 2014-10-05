@@ -14,7 +14,9 @@
 @property (strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong) AVCaptureVideoDataOutput* output;
 @property (strong) NSArray *observers;
-@property size_t framesWritten;
+@property (strong) NSByteCountFormatter *formatter;
+@property uint64 framesWritten;
+@property uint64 totalBytes;
 @end
 
 @implementation VideoRelayStatusController
@@ -25,6 +27,10 @@
   [self createLayer];
   
   self.status.stringValue = @"";
+  self.framesWritten = 0;
+  self.totalBytes = 0;
+  
+  self.formatter = [[NSByteCountFormatter alloc] init];
 
   self.window.title = [NSString stringWithFormat:@"Video Relay: %@", self.device.localizedName];
   
@@ -97,6 +103,12 @@
   self.previewLayer.frame = self.preview.bounds;
 }
 
+- (void)windowWillClose:(NSNotification *)notification
+{
+  [self.captureSession stopRunning];
+  [self.client disconnectWithCompletionHandler:nil];
+}
+
 #pragma mark AVCaptureVideoDataOutputSampleBufferDelegate
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
@@ -116,12 +128,8 @@
   [self.client publishData:data toTopic:self.topic withQos:AtMostOnce retain:NO completionHandler:nil];
   
   self.framesWritten++;
-  [self updateStatus];
-}
-
-- (void)updateStatus
-{
-  self.status.stringValue = [NSString stringWithFormat:@"Frames sent: %lu", self.framesWritten];
+  self.totalBytes += length;
+  self.status.stringValue = [NSString stringWithFormat:@"Frame: %@, Total: %llu - %@", [self.formatter stringFromByteCount:length], self.framesWritten, [self.formatter stringFromByteCount:self.totalBytes]];
 }
 
 @end

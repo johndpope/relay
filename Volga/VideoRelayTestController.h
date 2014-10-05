@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <MQTTKit/MQTTKit.h>
 
-@interface VideoRelayTestController : NSWindowController
+@interface VideoRelayTestController : NSWindowController <NSWindowDelegate>
 
 @property (weak) IBOutlet NSTextField *status;
 @property (weak) IBOutlet NSImageView *preview;

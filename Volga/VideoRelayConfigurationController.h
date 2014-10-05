@@ -17,8 +17,9 @@
 @property (weak) IBOutlet NSTextField *topic;
 
 - (IBAction)start:(id)sender;
+- (IBAction)test:(id)sender;
 
 @property (weak) AppDelegate *appDelegate;
-@property (strong) NSMutableArray *createdRelays;
+@property (strong) NSMutableArray *createdControllers;
 
 @end

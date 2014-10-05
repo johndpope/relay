@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "VideoRelayStatusController.h"
+#import "VideoRelayTestController.h"
 
 @implementation VideoRelayConfigurationController
 
@@ -17,7 +18,7 @@
 {
   [super loadView];
   
-  self.createdRelays = [NSMutableArray array];
+  self.createdControllers = [NSMutableArray array];
   
   [self.source removeAllItems];
   
@@ -37,7 +38,18 @@
   controller.topic = self.topic.stringValue.copy;
   [controller showWindow:self];
   
-  [self.createdRelays addObject:controller];
+  [self.createdControllers addObject:controller];
+}
+
+- (IBAction)test:(id)sender
+{
+  VideoRelayTestController* controller = [[VideoRelayTestController alloc] initWithWindowNibName:@"VideoRelayTest"];
+  
+  controller.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
+  controller.topic = self.topic.stringValue.copy;
+  [controller showWindow:self];
+  
+  [self.createdControllers addObject:controller];
 }
 
 @end

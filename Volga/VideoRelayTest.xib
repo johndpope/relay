@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoRelayTestController">
+            <connections>
+                <outlet property="preview" destination="cUw-GW-pOt" id="C8B-if-3pB"/>
+                <outlet property="status" destination="ICX-mr-eOD" id="XQM-1p-r8o"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ICX-mr-eOD">
+                        <rect key="frame" x="18" y="20" width="444" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status" id="80Y-ha-6b2">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUw-GW-pOt">
+                        <rect key="frame" x="20" y="45" width="440" height="205"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="SQ9-cO-8Ra"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cUw-GW-pOt" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="2hW-7z-SM0"/>
+                    <constraint firstAttribute="bottom" secondItem="ICX-mr-eOD" secondAttribute="bottom" constant="20" id="4ZY-XK-Xr5"/>
+                    <constraint firstAttribute="trailing" secondItem="cUw-GW-pOt" secondAttribute="trailing" constant="20" id="DV4-Rd-Nqd"/>
+                    <constraint firstItem="ICX-mr-eOD" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="EoU-cj-1pk"/>
+                    <constraint firstItem="cUw-GW-pOt" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="G9a-AJ-eNJ"/>
+                    <constraint firstAttribute="trailing" secondItem="ICX-mr-eOD" secondAttribute="trailing" constant="20" id="MK5-2L-RsA"/>
+                    <constraint firstItem="ICX-mr-eOD" firstAttribute="top" secondItem="cUw-GW-pOt" secondAttribute="bottom" constant="8" id="fXz-Uu-JO3"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="208" y="219"/>
+        </window>
+    </objects>
+</document>

@@ -59,12 +59,23 @@
                         <action selector="start:" target="-2" id="MDf-zD-Yf8"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G9R-mj-dWh">
+                    <rect key="frame" x="394" y="13" width="66" height="32"/>
+                    <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ACh-94-O4e">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="test:" target="-2" id="Qqh-dS-ftg"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="a7Y-Sw-AeG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="2FD-bF-7Xj"/>
                 <constraint firstItem="nf3-Ia-ZGF" firstAttribute="top" secondItem="n8Z-ns-KNF" secondAttribute="bottom" constant="8" id="3wm-6Q-Ydd"/>
                 <constraint firstItem="n8Z-ns-KNF" firstAttribute="top" secondItem="a7Y-Sw-AeG" secondAttribute="bottom" constant="8" id="5Qg-Bq-hUG"/>
                 <constraint firstItem="HoG-JQ-ZBy" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Dns-41-GDO"/>
+                <constraint firstAttribute="trailing" secondItem="G9R-mj-dWh" secondAttribute="trailing" constant="20" id="Dua-hS-tT9"/>
                 <constraint firstAttribute="trailing" secondItem="68o-pl-60o" secondAttribute="trailing" constant="20" id="Ewd-TB-k9f"/>
                 <constraint firstAttribute="trailing" secondItem="nf3-Ia-ZGF" secondAttribute="trailing" constant="20" id="Hcu-QK-mar"/>
                 <constraint firstAttribute="trailing" secondItem="a7Y-Sw-AeG" secondAttribute="trailing" constant="20" id="Icf-bs-bx4"/>
@@ -76,7 +87,9 @@
                 <constraint firstItem="68o-pl-60o" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="fAG-oA-QJR"/>
                 <constraint firstItem="nf3-Ia-ZGF" firstAttribute="top" secondItem="n8Z-ns-KNF" secondAttribute="bottom" constant="8" id="fXV-iu-Xc2"/>
                 <constraint firstItem="a7Y-Sw-AeG" firstAttribute="top" secondItem="68o-pl-60o" secondAttribute="bottom" constant="8" id="jOf-hx-qKT"/>
+                <constraint firstItem="G9R-mj-dWh" firstAttribute="top" secondItem="nf3-Ia-ZGF" secondAttribute="bottom" constant="8" id="tB5-Yd-kAT"/>
                 <constraint firstItem="nf3-Ia-ZGF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="uj2-Na-P3T"/>
+                <constraint firstAttribute="bottom" secondItem="G9R-mj-dWh" secondAttribute="bottom" constant="20" id="wh8-O8-vUd"/>
             </constraints>
             <point key="canvasLocation" x="279" y="357"/>
         </customView>

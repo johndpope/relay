@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoRelayConfigurationController">
+            <connections>
+                <outlet property="source" destination="a7Y-Sw-AeG" id="Zbc-Yw-gop"/>
+                <outlet property="view" destination="c22-O7-iKe" id="bBk-ZF-ZxU"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="486" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="68o-pl-60o">
+                    <rect key="frame" x="18" y="90" width="450" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Source" id="Vm0-Mf-ykO">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a7Y-Sw-AeG">
+                    <rect key="frame" x="18" y="58" width="451" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="M1Z-zK-a28">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="6Sh-hb-V17"/>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-JQ-ZBy">
+                    <rect key="frame" x="14" y="13" width="147" height="32"/>
+                    <buttonCell key="cell" type="push" title="Start Video Relay" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g3h-JB-tU9">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="start:" target="-2" id="MDf-zD-Yf8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="a7Y-Sw-AeG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="2FD-bF-7Xj"/>
+                <constraint firstItem="HoG-JQ-ZBy" firstAttribute="top" secondItem="a7Y-Sw-AeG" secondAttribute="bottom" constant="20" id="5ay-s4-9Il"/>
+                <constraint firstItem="HoG-JQ-ZBy" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Dns-41-GDO"/>
+                <constraint firstAttribute="trailing" secondItem="68o-pl-60o" secondAttribute="trailing" constant="20" id="Ewd-TB-k9f"/>
+                <constraint firstAttribute="trailing" secondItem="a7Y-Sw-AeG" secondAttribute="trailing" constant="20" id="Icf-bs-bx4"/>
+                <constraint firstItem="68o-pl-60o" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Rja-hH-pFY"/>
+                <constraint firstAttribute="bottom" secondItem="HoG-JQ-ZBy" secondAttribute="bottom" constant="20" id="ca3-IC-0Kd"/>
+                <constraint firstItem="68o-pl-60o" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="fAG-oA-QJR"/>
+                <constraint firstItem="a7Y-Sw-AeG" firstAttribute="top" secondItem="68o-pl-60o" secondAttribute="bottom" constant="8" id="jOf-hx-qKT"/>
+            </constraints>
+            <point key="canvasLocation" x="310" y="336.5"/>
+        </customView>
+    </objects>
+</document>

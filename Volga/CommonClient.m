@@ -26,6 +26,7 @@
 {
   if(self = [super init]) {
     self.formatter = [[NSByteCountFormatter alloc] init];
+    self.formatter.allowedUnits = NSByteCountFormatterUseAll;
     self.transferedMessages = 0;
     self.transferedBytes = 0;
     self.lastMessageSize = 0;
@@ -75,7 +76,7 @@
     }
   }];
 
-  self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(calculate) userInfo:nil repeats:YES];
+  self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(calculate) userInfo:nil repeats:YES];
 }
 
 - (void)calculate

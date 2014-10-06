@@ -15,9 +15,12 @@
 
 @property (weak) IBOutlet NSPopUpButton *source;
 @property (weak) IBOutlet NSTextField *topic;
+@property (weak) IBOutlet NSSlider *framerate;
+@property (weak) IBOutlet NSTextField *framerateInfo;
 
 - (IBAction)start:(id)sender;
 - (IBAction)test:(id)sender;
+- (IBAction)framerateUpdate:(id)sender;
 
 @property (weak) AppDelegate *appDelegate;
 @property (strong) NSMutableArray *createdControllers;

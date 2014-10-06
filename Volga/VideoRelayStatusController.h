@@ -18,5 +18,6 @@
 @property (strong) AVCaptureDevice* device;
 @property (strong) NSURL* uri;
 @property (strong) NSString* topic;
+@property NSInteger framerate;
 
 @end

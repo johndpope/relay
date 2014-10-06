@@ -68,6 +68,10 @@
 {
   NSError *error;
   
+  [self.device lockForConfiguration:&error];
+  
+  self.device.activeVideoMinFrameDuration = CMTimeMake(1, self.framerate);
+  
   AVCaptureDeviceInput * input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
   
   self.captureSession = [[AVCaptureSession alloc] init];

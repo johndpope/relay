@@ -6,6 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="VideoRelayConfigurationController">
             <connections>
+                <outlet property="framerate" destination="gql-aB-oYS" id="gBS-PT-ynP"/>
+                <outlet property="framerateInfo" destination="FpR-mU-ek6" id="htB-N4-drh"/>
                 <outlet property="source" destination="a7Y-Sw-AeG" id="Zbc-Yw-gop"/>
                 <outlet property="topic" destination="nf3-Ia-ZGF" id="7LZ-9y-j2x"/>
                 <outlet property="view" destination="c22-O7-iKe" id="bBk-ZF-ZxU"/>
@@ -14,11 +16,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="474" height="170"/>
+            <rect key="frame" x="0.0" y="0.0" width="474" height="227"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="68o-pl-60o">
-                    <rect key="frame" x="18" y="133" width="438" height="17"/>
+                    <rect key="frame" x="18" y="190" width="438" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Source" id="Vm0-Mf-ykO">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -26,7 +28,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a7Y-Sw-AeG">
-                    <rect key="frame" x="18" y="101" width="439" height="26"/>
+                    <rect key="frame" x="18" y="158" width="439" height="26"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="M1Z-zK-a28">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -69,29 +71,65 @@
                         <action selector="test:" target="-2" id="Qqh-dS-ftg"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ua3-zP-Kfv">
+                    <rect key="frame" x="18" y="136" width="438" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Framerate" id="fk8-BP-5VH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gql-aB-oYS">
+                    <rect key="frame" x="18" y="102" width="438" height="26"/>
+                    <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="30" doubleValue="10" tickMarkPosition="above" numberOfTickMarks="30" allowsTickMarkValuesOnly="YES" sliderType="linear" id="E7c-XY-mkp"/>
+                    <connections>
+                        <action selector="framerateUpdate:" target="-2" id="mUC-q6-QW3"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FpR-mU-ek6">
+                    <rect key="frame" x="402" y="136" width="54" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="LHD-GJ-SQK"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="10" id="kZA-xb-54P">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="a7Y-Sw-AeG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="2FD-bF-7Xj"/>
                 <constraint firstItem="nf3-Ia-ZGF" firstAttribute="top" secondItem="n8Z-ns-KNF" secondAttribute="bottom" constant="8" id="3wm-6Q-Ydd"/>
-                <constraint firstItem="n8Z-ns-KNF" firstAttribute="top" secondItem="a7Y-Sw-AeG" secondAttribute="bottom" constant="8" id="5Qg-Bq-hUG"/>
                 <constraint firstItem="HoG-JQ-ZBy" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Dns-41-GDO"/>
                 <constraint firstAttribute="trailing" secondItem="G9R-mj-dWh" secondAttribute="trailing" constant="20" id="Dua-hS-tT9"/>
                 <constraint firstAttribute="trailing" secondItem="68o-pl-60o" secondAttribute="trailing" constant="20" id="Ewd-TB-k9f"/>
                 <constraint firstAttribute="trailing" secondItem="nf3-Ia-ZGF" secondAttribute="trailing" constant="20" id="Hcu-QK-mar"/>
+                <constraint firstItem="gql-aB-oYS" firstAttribute="top" secondItem="ua3-zP-Kfv" secondAttribute="bottom" constant="8" id="HmS-AI-5PS"/>
                 <constraint firstAttribute="trailing" secondItem="a7Y-Sw-AeG" secondAttribute="trailing" constant="20" id="Icf-bs-bx4"/>
+                <constraint firstItem="ua3-zP-Kfv" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Lcq-DK-pzQ"/>
+                <constraint firstItem="FpR-mU-ek6" firstAttribute="top" secondItem="a7Y-Sw-AeG" secondAttribute="bottom" constant="8" id="M5u-wN-xUp"/>
                 <constraint firstItem="68o-pl-60o" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Rja-hH-pFY"/>
+                <constraint firstItem="gql-aB-oYS" firstAttribute="top" secondItem="FpR-mU-ek6" secondAttribute="bottom" constant="8" id="UFB-sY-VTe"/>
+                <constraint firstAttribute="trailing" secondItem="gql-aB-oYS" secondAttribute="trailing" constant="20" id="UYv-tF-XKl"/>
+                <constraint firstAttribute="trailing" secondItem="ua3-zP-Kfv" secondAttribute="trailing" constant="20" id="Uml-VH-FsP"/>
                 <constraint firstItem="n8Z-ns-KNF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Y49-1E-JD2"/>
+                <constraint firstItem="ua3-zP-Kfv" firstAttribute="top" secondItem="a7Y-Sw-AeG" secondAttribute="bottom" constant="8" id="YDc-lm-rcQ"/>
                 <constraint firstItem="HoG-JQ-ZBy" firstAttribute="top" secondItem="nf3-Ia-ZGF" secondAttribute="bottom" constant="8" id="bPM-dt-vxe"/>
                 <constraint firstAttribute="trailing" secondItem="n8Z-ns-KNF" secondAttribute="trailing" constant="20" id="bqr-hu-eRT"/>
                 <constraint firstAttribute="bottom" secondItem="HoG-JQ-ZBy" secondAttribute="bottom" constant="20" id="ca3-IC-0Kd"/>
+                <constraint firstAttribute="trailing" secondItem="FpR-mU-ek6" secondAttribute="trailing" constant="20" id="ddL-En-yQ5"/>
                 <constraint firstItem="68o-pl-60o" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="fAG-oA-QJR"/>
                 <constraint firstItem="nf3-Ia-ZGF" firstAttribute="top" secondItem="n8Z-ns-KNF" secondAttribute="bottom" constant="8" id="fXV-iu-Xc2"/>
+                <constraint firstItem="gql-aB-oYS" firstAttribute="top" secondItem="FpR-mU-ek6" secondAttribute="bottom" constant="8" id="fb1-nK-PgN"/>
                 <constraint firstItem="a7Y-Sw-AeG" firstAttribute="top" secondItem="68o-pl-60o" secondAttribute="bottom" constant="8" id="jOf-hx-qKT"/>
+                <constraint firstItem="gql-aB-oYS" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="mrZ-BC-jMW"/>
                 <constraint firstItem="G9R-mj-dWh" firstAttribute="top" secondItem="nf3-Ia-ZGF" secondAttribute="bottom" constant="8" id="tB5-Yd-kAT"/>
                 <constraint firstItem="nf3-Ia-ZGF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="uj2-Na-P3T"/>
                 <constraint firstAttribute="bottom" secondItem="G9R-mj-dWh" secondAttribute="bottom" constant="20" id="wh8-O8-vUd"/>
+                <constraint firstItem="n8Z-ns-KNF" firstAttribute="top" secondItem="gql-aB-oYS" secondAttribute="bottom" constant="8" id="zzl-fu-EPh"/>
             </constraints>
-            <point key="canvasLocation" x="279" y="357"/>
+            <point key="canvasLocation" x="817" y="400.5"/>
         </customView>
     </objects>
 </document>

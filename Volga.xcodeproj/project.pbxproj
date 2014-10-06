@@ -86,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				5230FF8319E1961C00646BC1 /* Application.xib */,
-				5230FF7F19E193B400646BC1 /* VideoRelayConfiguration.xib */,
 				5230FF8119E194D500646BC1 /* MidiRelayConfiguration.xib */,
+				5230FF7F19E193B400646BC1 /* VideoRelayConfiguration.xib */,
 				5230FF9A19E1A78C00646BC1 /* MidiRelayStatus.xib */,
 				5230FF9F19E1A79400646BC1 /* VideoRelayStatus.xib */,
 				5260701B19E1D8CD00421B5B /* VideoRelayTest.xib */,

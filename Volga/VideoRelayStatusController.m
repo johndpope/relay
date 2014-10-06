@@ -70,7 +70,7 @@
   
   [self.device lockForConfiguration:&error];
   
-  self.device.activeVideoMinFrameDuration = CMTimeMake(1, (int)self.framerate);
+  self.device.activeVideoMinFrameDuration = CMTimeMake(1, (int)self.framerate.integerValue);
   
   AVCaptureDeviceInput * input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
   
@@ -85,10 +85,12 @@
   self.output = [[AVCaptureVideoDataOutput alloc] init];
   self.output.alwaysDiscardsLateVideoFrames = YES;
   [self.output setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-  NSDictionary* videoSettings = @{
-                                  AVVideoCodecKey: AVVideoCodecJPEG
-                                  };
-  [self.output setVideoSettings:videoSettings];
+  [self.output setVideoSettings:@{
+    AVVideoCodecKey: AVVideoCodecJPEG,
+    AVVideoCompressionPropertiesKey: @{
+      AVVideoQualityKey: self.quality
+    }
+  }];
   [self.captureSession addOutput:self.output];
   
   if(error) {
@@ -132,8 +134,8 @@
   [self.client publishData:data toTopic:self.topic withQos:AtMostOnce retain:NO completionHandler:nil];
   
   self.framesWritten++;
-  self.totalBytes += length;
-  self.status.stringValue = [NSString stringWithFormat:@"Frame: %@, Total: %llu - %@", [self.formatter stringFromByteCount:length], self.framesWritten, [self.formatter stringFromByteCount:self.totalBytes]];
+  self.totalBytes += data.length;
+  self.status.stringValue = [NSString stringWithFormat:@"Frame: %@, Total: %llu - %@", [self.formatter stringFromByteCount:data.length], self.framesWritten, [self.formatter stringFromByteCount:self.totalBytes]];
 }
 
 @end

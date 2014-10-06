@@ -19,6 +19,8 @@
   [super loadView];
   
   self.createdControllers = [NSMutableArray array];
+  self.quality = @0.5;
+  self.framerate = @10;
   
   [self.source removeAllItems];
   
@@ -36,7 +38,8 @@
   controller.device = device;
   controller.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
   controller.topic = self.topic.stringValue.copy;
-  controller.framerate = self.framerate.integerValue;
+  controller.framerate = self.framerate.copy;
+  controller.quality = self.quality.copy;
   [controller showWindow:self];
   
   [self.createdControllers addObject:controller];
@@ -51,11 +54,6 @@
   [controller showWindow:self];
   
   [self.createdControllers addObject:controller];
-}
-
-- (IBAction)framerateUpdate:(id)sender
-{
-  self.framerateInfo.stringValue = self.framerate.stringValue;
 }
 
 @end

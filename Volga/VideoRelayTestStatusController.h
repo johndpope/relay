@@ -7,14 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <MQTTKit/MQTTKit.h>
 
-@interface VideoRelayTestController : NSWindowController <NSWindowDelegate>
+#import "CommonClient.h"
 
-@property (weak) IBOutlet NSTextField *status;
+@interface VideoRelayTestStatusController : NSWindowController <NSWindowDelegate, CommonClientDelegate>
+
 @property (weak) IBOutlet NSImageView *preview;
+@property (weak) IBOutlet NSTextField *status;
 
-@property (strong) NSURL* uri;
-@property (strong) NSString* topic;
+@property (strong) CommonClient* client;
 
 @end

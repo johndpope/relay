@@ -9,14 +9,9 @@
 #import "VideoRelayStatusController.h"
 
 @interface VideoRelayStatusController ()
-@property (strong) MQTTClient *client;
 @property (strong) AVCaptureSession *captureSession;
 @property (strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong) AVCaptureVideoDataOutput* output;
-@property (strong) NSArray *observers;
-@property (strong) NSByteCountFormatter *formatter;
-@property uint64 framesWritten;
-@property uint64 totalBytes;
 @end
 
 @implementation VideoRelayStatusController
@@ -24,44 +19,19 @@
 - (void)windowDidLoad {
   [super windowDidLoad];
   
-  [self createLayer];
+  self.status.stringValue = self.client.info;
   
-  self.status.stringValue = @"";
-  self.framesWritten = 0;
-  self.totalBytes = 0;
+  self.client.delegate = self;
+  [self.client connect];
   
-  self.formatter = [[NSByteCountFormatter alloc] init];
-
-  self.window.title = [NSString stringWithFormat:@"Video Relay: %@", self.device.localizedName];
-  
-  self.client = [[MQTTClient alloc] initWithClientId:@"volga/video"];
-  self.client.username = self.uri.user;
-  self.client.password = self.uri.password;
-  
-  self.status.stringValue = @"connecting...";
-  
-  [self.client connectToHost:self.uri.host completionHandler:^(MQTTConnectionReturnCode code) {
-    if(code != ConnectionAccepted) {
-      dispatch_sync(dispatch_get_main_queue(), ^{
-        self.status.stringValue = @"connection failed!";
-      });
-    } else {
-      dispatch_sync(dispatch_get_main_queue(), ^{
-        self.status.stringValue = @"connected!";
-        [self startCaptureSession];
-      });
-    }
-  }];
-}
-
-- (void)createLayer
-{
   self.preview.layer = [CALayer layer];
   self.preview.layer.frame = self.preview.bounds;
   self.preview.layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
   self.preview.layer.borderColor = CGColorGetConstantColor(kCGColorBlack);
   self.preview.layer.borderWidth = 1;
   self.preview.wantsLayer = YES;
+  
+  self.window.title = [NSString stringWithFormat:@"Video Relay: %@", self.device.localizedName];
 }
 
 - (void)startCaptureSession
@@ -94,7 +64,6 @@
   [self.captureSession addOutput:self.output];
   
   if(error) {
-    self.status.stringValue = @"capture failed!";
     NSLog(@"%@", error);
   } else {
     [self.captureSession startRunning];
@@ -112,7 +81,7 @@
 - (void)windowWillClose:(NSNotification *)notification
 {
   [self.captureSession stopRunning];
-  [self.client disconnectWithCompletionHandler:nil];
+  [self.client disconnect];
 }
 
 #pragma mark AVCaptureVideoDataOutputSampleBufferDelegate
@@ -131,11 +100,18 @@
   
   NSData *data = [[NSData dataWithBytes:ptr length:length] base64EncodedDataWithOptions:0];
   
-  [self.client publishData:data toTopic:self.topic withQos:AtMostOnce retain:NO completionHandler:nil];
+  [self.client publish:@"" andPayload:data];
   
-  self.framesWritten++;
-  self.totalBytes += data.length;
-  self.status.stringValue = [NSString stringWithFormat:@"Frame: %@, Total: %llu - %@", [self.formatter stringFromByteCount:data.length], self.framesWritten, [self.formatter stringFromByteCount:self.totalBytes]];
+  self.status.stringValue = self.client.info;
 }
+
+#pragma mark CommonClientDelegate
+
+- (void)clientDidConnect
+{
+  [self startCaptureSession];
+}
+
+- (void)didReceiveMessage:(MQTTMessage *)message {}
 
 @end

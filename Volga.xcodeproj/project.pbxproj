@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BB04B5F75364C99B2900622 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B9D0EF59E451A8AEB7A88 /* libPods.a */; };
+		52238EA219E3279C006D692E /* CommonClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 52238EA119E3279C006D692E /* CommonClient.m */; };
 		5230FF8019E193B400646BC1 /* VideoRelayConfiguration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5230FF7F19E193B400646BC1 /* VideoRelayConfiguration.xib */; };
 		5230FF8219E194D500646BC1 /* MidiRelayConfiguration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5230FF8119E194D500646BC1 /* MidiRelayConfiguration.xib */; };
 		5230FF8419E1961C00646BC1 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5230FF8319E1961C00646BC1 /* Application.xib */; };
@@ -21,7 +22,7 @@
 		524A7E2919D3412300BD55BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E2819D3412300BD55BE /* AppDelegate.m */; };
 		524A7E2B19D3412300BD55BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524A7E2A19D3412300BD55BE /* Images.xcassets */; };
 		524A7E4519D3448000BD55BE /* MidiRelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E4419D3448000BD55BE /* MidiRelay.m */; };
-		5260701C19E1D8CD00421B5B /* VideoRelayTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5260701A19E1D8CD00421B5B /* VideoRelayTestController.m */; };
+		5260701C19E1D8CD00421B5B /* VideoRelayTestStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5260701A19E1D8CD00421B5B /* VideoRelayTestStatusController.m */; };
 		5260701D19E1D8CD00421B5B /* VideoRelayTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5260701B19E1D8CD00421B5B /* VideoRelayTest.xib */; };
 		5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066019DD6A2A00E50DB3 /* AVFoundation.framework */; };
 		5276066319DD6A2A00E50DB3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066119DD6A2A00E50DB3 /* AVKit.framework */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		2D8B9D0EF59E451A8AEB7A88 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D56E64FC5240FAA451BF3B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		52238EA019E3279C006D692E /* CommonClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonClient.h; sourceTree = "<group>"; };
+		52238EA119E3279C006D692E /* CommonClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonClient.m; sourceTree = "<group>"; };
 		5230FF7F19E193B400646BC1 /* VideoRelayConfiguration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRelayConfiguration.xib; sourceTree = "<group>"; };
 		5230FF8119E194D500646BC1 /* MidiRelayConfiguration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MidiRelayConfiguration.xib; sourceTree = "<group>"; };
 		5230FF8319E1961C00646BC1 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Application.xib; path = Base.lproj/Application.xib; sourceTree = "<group>"; };
@@ -51,8 +54,8 @@
 		524A7E2A19D3412300BD55BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		524A7E4319D3448000BD55BE /* MidiRelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiRelay.h; sourceTree = "<group>"; };
 		524A7E4419D3448000BD55BE /* MidiRelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiRelay.m; sourceTree = "<group>"; };
-		5260701919E1D8CD00421B5B /* VideoRelayTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRelayTestController.h; sourceTree = "<group>"; };
-		5260701A19E1D8CD00421B5B /* VideoRelayTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRelayTestController.m; sourceTree = "<group>"; };
+		5260701919E1D8CD00421B5B /* VideoRelayTestStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRelayTestStatusController.h; sourceTree = "<group>"; };
+		5260701A19E1D8CD00421B5B /* VideoRelayTestStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRelayTestStatusController.m; sourceTree = "<group>"; };
 		5260701B19E1D8CD00421B5B /* VideoRelayTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRelayTest.xib; sourceTree = "<group>"; };
 		5276066019DD6A2A00E50DB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5276066119DD6A2A00E50DB3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -80,6 +83,17 @@
 				2D8B9D0EF59E451A8AEB7A88 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52238EA319E32A38006D692E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				524A7E2719D3412300BD55BE /* AppDelegate.h */,
+				524A7E2819D3412300BD55BE /* AppDelegate.m */,
+				52238EA019E3279C006D692E /* CommonClient.h */,
+				52238EA119E3279C006D692E /* CommonClient.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		5230FF8519E19CEA00646BC1 /* Interface */ = {
@@ -116,8 +130,8 @@
 				5230FF9919E1A78C00646BC1 /* MidiRelayStatusController.m */,
 				5230FF9D19E1A79400646BC1 /* VideoRelayStatusController.h */,
 				5230FF9E19E1A79400646BC1 /* VideoRelayStatusController.m */,
-				5260701919E1D8CD00421B5B /* VideoRelayTestController.h */,
-				5260701A19E1D8CD00421B5B /* VideoRelayTestController.m */,
+				5260701919E1D8CD00421B5B /* VideoRelayTestStatusController.h */,
+				5260701A19E1D8CD00421B5B /* VideoRelayTestStatusController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -143,8 +157,7 @@
 		524A7E2219D3412300BD55BE /* Volga */ = {
 			isa = PBXGroup;
 			children = (
-				524A7E2719D3412300BD55BE /* AppDelegate.h */,
-				524A7E2819D3412300BD55BE /* AppDelegate.m */,
+				52238EA319E32A38006D692E /* Classes */,
 				5230FF8619E19FC800646BC1 /* Relays */,
 				5230FF8719E19FD800646BC1 /* Controllers */,
 				5230FF8519E19CEA00646BC1 /* Interface */,
@@ -274,11 +287,12 @@
 				524A7E4519D3448000BD55BE /* MidiRelay.m in Sources */,
 				5230FF8D19E1A01000646BC1 /* VideoRelayConfigurationController.m in Sources */,
 				524A7E2919D3412300BD55BE /* AppDelegate.m in Sources */,
+				52238EA219E3279C006D692E /* CommonClient.m in Sources */,
 				5230FFA019E1A79400646BC1 /* VideoRelayStatusController.m in Sources */,
 				5230FF9B19E1A78C00646BC1 /* MidiRelayStatusController.m in Sources */,
 				5230FF8A19E19FF000646BC1 /* MidiRelayConfigurationController.m in Sources */,
 				524A7E2619D3412300BD55BE /* main.m in Sources */,
-				5260701C19E1D8CD00421B5B /* VideoRelayTestController.m in Sources */,
+				5260701C19E1D8CD00421B5B /* VideoRelayTestStatusController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

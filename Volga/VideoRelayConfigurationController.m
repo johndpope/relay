@@ -9,8 +9,9 @@
 #import "VideoRelayConfigurationController.h"
 
 #import "AppDelegate.h"
+#import "CommonClient.h"
 #import "VideoRelayStatusController.h"
-#import "VideoRelayTestController.h"
+#import "VideoRelayTestStatusController.h"
 
 @implementation VideoRelayConfigurationController
 
@@ -34,10 +35,13 @@
   AVCaptureDevice *device = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] objectAtIndex:self.source.indexOfSelectedItem];
   
   VideoRelayStatusController* controller = [[VideoRelayStatusController alloc] initWithWindowNibName:@"VideoRelayStatus"];
+  
+  CommonClient *client = [[CommonClient alloc] init];
+  client.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
+  client.baseTopic = self.topic.stringValue.copy;
 
   controller.device = device;
-  controller.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
-  controller.topic = self.topic.stringValue.copy;
+  controller.client = client;
   controller.framerate = self.framerate.copy;
   controller.quality = self.quality.copy;
   [controller showWindow:self];
@@ -47,10 +51,13 @@
 
 - (IBAction)test:(id)sender
 {
-  VideoRelayTestController* controller = [[VideoRelayTestController alloc] initWithWindowNibName:@"VideoRelayTest"];
+  VideoRelayTestStatusController* controller = [[VideoRelayTestStatusController alloc] initWithWindowNibName:@"VideoRelayTest"];
   
-  controller.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
-  controller.topic = self.topic.stringValue.copy;
+    CommonClient *client = [[CommonClient alloc] init];
+  client.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
+  client.baseTopic = self.topic.stringValue.copy;
+  
+  controller.client = client;
   [controller showWindow:self];
   
   [self.createdControllers addObject:controller];

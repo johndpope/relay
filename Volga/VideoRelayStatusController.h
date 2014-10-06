@@ -8,16 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import <AVFoundation/AVFoundation.h>
-#import <MQTTKit/MQTTKit.h>
 
-@interface VideoRelayStatusController : NSWindowController <NSWindowDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
+#import "CommonClient.h"
 
-@property (weak) IBOutlet NSTextField *status;
+@interface VideoRelayStatusController : NSWindowController <NSWindowDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CommonClientDelegate>
+
 @property (weak) IBOutlet NSView *preview;
+@property (weak) IBOutlet NSTextField *status;
 
+@property (strong) CommonClient* client;
 @property (strong) AVCaptureDevice* device;
-@property (strong) NSURL* uri;
-@property (strong) NSString* topic;
 @property (strong) NSNumber* framerate;
 @property (strong) NSNumber* quality;
 

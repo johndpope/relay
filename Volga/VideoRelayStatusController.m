@@ -44,7 +44,6 @@
     if(code != ConnectionAccepted) {
       dispatch_sync(dispatch_get_main_queue(), ^{
         self.status.stringValue = @"connection failed!";
-        [NSAlert alertWithMessageText:@"connection failed!" defaultButton:@"Close" alternateButton:nil otherButton:nil informativeTextWithFormat:nil];
       });
     } else {
       dispatch_sync(dispatch_get_main_queue(), ^{
@@ -89,7 +88,8 @@
   [self.captureSession addOutput:self.output];
   
   if(error) {
-    [[NSAlert alertWithError:error] runModal];
+    self.status.stringValue = @"capture failed!";
+    NSLog(@"%@", error);
   } else {
     [self.captureSession startRunning];
   }

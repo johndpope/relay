@@ -39,7 +39,6 @@
     if(code != ConnectionAccepted) {
       dispatch_async(dispatch_get_main_queue(), ^{
         self.status.stringValue = @"connection failed!";
-        [NSAlert alertWithMessageText:@"connection failed!" defaultButton:@"Close" alternateButton:nil otherButton:nil informativeTextWithFormat:nil];
       });
     } else {
       [self.client subscribe:self.topic withCompletionHandler:nil];

@@ -70,7 +70,7 @@
   
   [self.device lockForConfiguration:&error];
   
-  self.device.activeVideoMinFrameDuration = CMTimeMake(1, self.framerate);
+  self.device.activeVideoMinFrameDuration = CMTimeMake(1, (int)self.framerate);
   
   AVCaptureDeviceInput * input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
   

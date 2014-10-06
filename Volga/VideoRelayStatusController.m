@@ -123,7 +123,7 @@
   size_t length = CMBlockBufferGetDataLength(dataBuffer);
   CMBlockBufferGetDataPointer(dataBuffer, 0, 0, &length, &ptr);
   
-  NSData *data = [NSData dataWithBytes:ptr length:length];
+  NSData *data = [[NSData dataWithBytes:ptr length:length] base64EncodedDataWithOptions:0];
   
   [self.client publishData:data toTopic:self.topic withQos:AtMostOnce retain:NO completionHandler:nil];
   

@@ -56,7 +56,8 @@
     _self.totalBytes += message.payload.length;
     _self.status.stringValue = [NSString stringWithFormat:@"Frame: %@, Total: %llu - %@", [_self.formatter stringFromByteCount:message.payload.length], _self.framesReceived, [_self.formatter stringFromByteCount:_self.totalBytes]];
     dispatch_async(dispatch_get_main_queue(), ^{
-      _self.preview.image = [[NSImage alloc] initWithData:message.payload];
+      NSData *image = [[NSData alloc] initWithBase64EncodedData:message.payload options:0];
+      _self.preview.image = [[NSImage alloc] initWithData:image];
     });
   }];
 }

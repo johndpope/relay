@@ -25,7 +25,6 @@
 		5260701C19E1D8CD00421B5B /* VideoRelayTestStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5260701A19E1D8CD00421B5B /* VideoRelayTestStatusController.m */; };
 		5260701D19E1D8CD00421B5B /* VideoRelayTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5260701B19E1D8CD00421B5B /* VideoRelayTest.xib */; };
 		5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066019DD6A2A00E50DB3 /* AVFoundation.framework */; };
-		5276066319DD6A2A00E50DB3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066119DD6A2A00E50DB3 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +66,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */,
-				5276066319DD6A2A00E50DB3 /* AVKit.framework in Frameworks */,
 				2BB04B5F75364C99B2900622 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

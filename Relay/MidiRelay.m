@@ -1,6 +1,6 @@
 //
 //  MidiRelay.m
-//  Volga
+//  Relay
 //
 //  Created by Joël Gähwiler on 24.09.14.
 //  Copyright (c) 2014 shiftr.io. All rights reserved.
@@ -13,7 +13,7 @@
 - (void)setup:(NSString*)uri andSource:(MIKMIDISourceEndpoint*)source andDestination:(MIKMIDIDestinationEndpoint*)destination {
   self.namespaceUri = [[NSURL alloc] initWithString:uri];
   
-  self.client = [[MQTTClient alloc] initWithClientId:@"volga/1"];
+  self.client = [[MQTTClient alloc] initWithClientId:@"Relay/1"];
   
   self.client.username = self.namespaceUri.user;
   self.client.password = self.namespaceUri.password;

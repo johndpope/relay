@@ -1,3 +1,4 @@
 .DS_Store
-256dpi.xcuserdatad/
+xcuserdata/
 Pods/
+*.xccheckout

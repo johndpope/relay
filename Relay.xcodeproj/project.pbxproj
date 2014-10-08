@@ -21,7 +21,7 @@
 		524A7E2619D3412300BD55BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E2519D3412300BD55BE /* main.m */; };
 		524A7E2919D3412300BD55BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E2819D3412300BD55BE /* AppDelegate.m */; };
 		524A7E2B19D3412300BD55BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524A7E2A19D3412300BD55BE /* Images.xcassets */; };
-		524A7E4519D3448000BD55BE /* MidiRelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E4419D3448000BD55BE /* MidiRelay.m */; };
+		524E46C019E57BFF005D1EF3 /* MidiRelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A7E4419D3448000BD55BE /* MidiRelay.m */; };
 		5260701C19E1D8CD00421B5B /* VideoRelayTestStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5260701A19E1D8CD00421B5B /* VideoRelayTestStatusController.m */; };
 		5260701D19E1D8CD00421B5B /* VideoRelayTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5260701B19E1D8CD00421B5B /* VideoRelayTest.xib */; };
 		5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066019DD6A2A00E50DB3 /* AVFoundation.framework */; };
@@ -34,7 +34,7 @@
 		52238EA119E3279C006D692E /* CommonClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonClient.m; sourceTree = "<group>"; };
 		5230FF7F19E193B400646BC1 /* VideoRelayConfiguration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRelayConfiguration.xib; sourceTree = "<group>"; };
 		5230FF8119E194D500646BC1 /* MidiRelayConfiguration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MidiRelayConfiguration.xib; sourceTree = "<group>"; };
-		5230FF8319E1961C00646BC1 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Application.xib; path = Base.lproj/Application.xib; sourceTree = "<group>"; };
+		5230FF8319E1961C00646BC1 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
 		5230FF8819E19FF000646BC1 /* MidiRelayConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiRelayConfigurationController.h; sourceTree = "<group>"; };
 		5230FF8919E19FF000646BC1 /* MidiRelayConfigurationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiRelayConfigurationController.m; sourceTree = "<group>"; };
 		5230FF8B19E1A01000646BC1 /* VideoRelayConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRelayConfigurationController.h; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		5230FF9D19E1A79400646BC1 /* VideoRelayStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRelayStatusController.h; sourceTree = "<group>"; };
 		5230FF9E19E1A79400646BC1 /* VideoRelayStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRelayStatusController.m; sourceTree = "<group>"; };
 		5230FF9F19E1A79400646BC1 /* VideoRelayStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRelayStatus.xib; sourceTree = "<group>"; };
-		524A7E2019D3412300BD55BE /* Volga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volga.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		524A7E2019D3412300BD55BE /* Relay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Relay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524A7E2419D3412300BD55BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524A7E2519D3412300BD55BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		524A7E2719D3412300BD55BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		5230FF8519E19CEA00646BC1 /* Interface */ = {
+		5230FF8519E19CEA00646BC1 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
 				5230FF8319E1961C00646BC1 /* Application.xib */,
@@ -105,7 +105,7 @@
 				5260701B19E1D8CD00421B5B /* VideoRelayTest.xib */,
 				524A7E2A19D3412300BD55BE /* Images.xcassets */,
 			);
-			name = Interface;
+			name = Interfaces;
 			sourceTree = "<group>";
 		};
 		5230FF8619E19FC800646BC1 /* Relays */ = {
@@ -137,7 +137,7 @@
 		524A7E1719D3412300BD55BE = {
 			isa = PBXGroup;
 			children = (
-				524A7E2219D3412300BD55BE /* Volga */,
+				524A7E2219D3412300BD55BE /* Relay */,
 				524A7E2119D3412300BD55BE /* Products */,
 				30D56E64FC5240FAA451BF3B /* Pods.xcconfig */,
 				2220CFCEDE024AA2B84CDD9F /* Frameworks */,
@@ -147,21 +147,21 @@
 		524A7E2119D3412300BD55BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				524A7E2019D3412300BD55BE /* Volga.app */,
+				524A7E2019D3412300BD55BE /* Relay.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		524A7E2219D3412300BD55BE /* Volga */ = {
+		524A7E2219D3412300BD55BE /* Relay */ = {
 			isa = PBXGroup;
 			children = (
 				52238EA319E32A38006D692E /* Classes */,
 				5230FF8619E19FC800646BC1 /* Relays */,
 				5230FF8719E19FD800646BC1 /* Controllers */,
-				5230FF8519E19CEA00646BC1 /* Interface */,
+				5230FF8519E19CEA00646BC1 /* Interfaces */,
 				524A7E2319D3412300BD55BE /* Supporting Files */,
 			);
-			path = Volga;
+			path = Relay;
 			sourceTree = "<group>";
 		};
 		524A7E2319D3412300BD55BE /* Supporting Files */ = {
@@ -176,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		524A7E1F19D3412300BD55BE /* Volga */ = {
+		524A7E1F19D3412300BD55BE /* Relay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 524A7E3D19D3412400BD55BE /* Build configuration list for PBXNativeTarget "Volga" */;
+			buildConfigurationList = 524A7E3D19D3412400BD55BE /* Build configuration list for PBXNativeTarget "Relay" */;
 			buildPhases = (
 				93AE46EC3FF2420FB3C898D0 /* Check Pods Manifest.lock */,
 				524A7E1C19D3412300BD55BE /* Sources */,
@@ -190,9 +190,9 @@
 			);
 			dependencies = (
 			);
-			name = Volga;
-			productName = Volga;
-			productReference = 524A7E2019D3412300BD55BE /* Volga.app */;
+			name = Relay;
+			productName = Relay;
+			productReference = 524A7E2019D3412300BD55BE /* Relay.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +209,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 524A7E1B19D3412300BD55BE /* Build configuration list for PBXProject "Volga" */;
+			buildConfigurationList = 524A7E1B19D3412300BD55BE /* Build configuration list for PBXProject "Relay" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,7 +222,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				524A7E1F19D3412300BD55BE /* Volga */,
+				524A7E1F19D3412300BD55BE /* Relay */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524A7E4519D3448000BD55BE /* MidiRelay.m in Sources */,
+				524E46C019E57BFF005D1EF3 /* MidiRelay.m in Sources */,
 				5230FF8D19E1A01000646BC1 /* VideoRelayConfigurationController.m in Sources */,
 				524A7E2919D3412300BD55BE /* AppDelegate.m in Sources */,
 				52238EA219E3279C006D692E /* CommonClient.m in Sources */,
@@ -379,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Volga/Info.plist;
+				INFOPLIST_FILE = Relay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -391,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Volga/Info.plist;
+				INFOPLIST_FILE = Relay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -400,7 +400,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		524A7E1B19D3412300BD55BE /* Build configuration list for PBXProject "Volga" */ = {
+		524A7E1B19D3412300BD55BE /* Build configuration list for PBXProject "Relay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				524A7E3B19D3412400BD55BE /* Debug */,
@@ -409,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		524A7E3D19D3412400BD55BE /* Build configuration list for PBXNativeTarget "Volga" */ = {
+		524A7E3D19D3412400BD55BE /* Build configuration list for PBXNativeTarget "Relay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				524A7E3E19D3412400BD55BE /* Debug */,

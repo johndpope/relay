@@ -1,6 +1,6 @@
 //
 //  Client.m
-//  Volga
+//  Relay
 //
 //  Created by Joël Gähwiler on 06.10.14.
 //  Copyright (c) 2014 shiftr.io. All rights reserved.
@@ -38,7 +38,7 @@
 
 - (NSString*)clientID
 {
-  return [NSString stringWithFormat:@"Volga/%@", [[NSUUID UUID] UUIDString]];
+  return [NSString stringWithFormat:@"Relay/%@", [[NSUUID UUID] UUIDString]];
 }
 
 - (void)connect

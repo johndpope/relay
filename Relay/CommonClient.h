@@ -1,6 +1,6 @@
 //
 //  Client.h
-//  Volga
+//  Relay
 //
 //  Created by Joël Gähwiler on 06.10.14.
 //  Copyright (c) 2014 shiftr.io. All rights reserved.

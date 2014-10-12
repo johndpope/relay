@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 shiftr.io. All rights reserved.
 //
 
-#import "VideoRelayConfigurationController.h"
+#import "VideoConfigurationController.h"
 
 #import "AppDelegate.h"
 #import "CommonClient.h"
-#import "VideoRelayStatusController.h"
-#import "VideoRelayTestStatusController.h"
+#import "VideoRelayController.h"
+#import "VideoTestController.h"
 
-@implementation VideoRelayConfigurationController
+@implementation VideoConfigurationController
 
 - (void)loadView
 {
@@ -34,11 +34,11 @@
 {
   AVCaptureDevice *device = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] objectAtIndex:self.source.indexOfSelectedItem];
   
-  VideoRelayStatusController* controller = [[VideoRelayStatusController alloc] initWithWindowNibName:@"VideoRelayStatus"];
+  VideoRelayController* controller = [[VideoRelayController alloc] initWithWindowNibName:@"VideoRelay"];
   
   CommonClient *client = [[CommonClient alloc] init];
   client.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
-  client.baseTopic = self.topic.stringValue.copy;
+  client.baseTopic = self.baseTopic.stringValue.copy;
 
   controller.device = device;
   controller.client = client;
@@ -51,11 +51,11 @@
 
 - (IBAction)test:(id)sender
 {
-  VideoRelayTestStatusController* controller = [[VideoRelayTestStatusController alloc] initWithWindowNibName:@"VideoRelayTest"];
+  VideoTestController* controller = [[VideoTestController alloc] initWithWindowNibName:@"VideoTest"];
   
     CommonClient *client = [[CommonClient alloc] init];
   client.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
-  client.baseTopic = self.topic.stringValue.copy;
+  client.baseTopic = self.baseTopic.stringValue.copy;
   
   controller.client = client;
   [controller showWindow:self];

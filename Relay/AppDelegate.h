@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class MidiRelayConfigurationController;
-@class VideoRelayConfigurationController;
+@class MidiConfigurationController;
+@class VideoConfigurationController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -17,8 +17,8 @@
 @property (weak) IBOutlet NSTextField *uriTextField;
 @property (weak) IBOutlet NSTabView *tabView;
 
-@property (strong) MidiRelayConfigurationController *midiRelayController;
-@property (strong) VideoRelayConfigurationController *videoRelayController;
+@property (strong) MidiConfigurationController *midiRelayController;
+@property (strong) VideoConfigurationController *videoRelayController;
 
 - (NSString*)namespaceURI;
 

@@ -11,7 +11,7 @@
 
 #import "CommonClient.h"
 
-@interface VideoRelayStatusController : NSWindowController <NSWindowDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CommonClientDelegate>
+@interface VideoRelayController : NSWindowController <NSWindowDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CommonClientDelegate>
 
 @property (weak) IBOutlet NSView *preview;
 @property (weak) IBOutlet NSTextField *status;

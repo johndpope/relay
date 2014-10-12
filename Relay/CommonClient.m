@@ -8,6 +8,9 @@
 
 #import "CommonClient.h"
 
+@implementation CommonMessage
+@end
+
 @interface CommonClient ()
 @property (strong) MQTTClient *client;
 @property (strong) NSByteCountFormatter *formatter;
@@ -51,12 +54,15 @@
   
   __weak typeof(self) _self = self;
 
-  [self.client setMessageHandler:^(MQTTMessage *message) {
+  [self.client setMessageHandler:^(MQTTMessage *_message) {
     dispatch_sync(dispatch_get_main_queue(), ^{
       _self.transferedMessages++;
-      _self.transferedBytes += message.payload.length;
-      _self.lastMessageSize = message.payload.length;
-      [_self.messageSizes addObject:[NSNumber numberWithInteger:message.payload.length]];
+      _self.transferedBytes += _message.payload.length;
+      _self.lastMessageSize = _message.payload.length;
+      [_self.messageSizes addObject:[NSNumber numberWithInteger:_message.payload.length]];
+      CommonMessage *message = [[CommonMessage alloc] init];
+      message.message = _message;
+      message.topic = [_message.topic stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@/", _self.baseTopic] withString:@""];
       [_self.delegate didReceiveMessage:message];
     });
   }];
@@ -106,9 +112,16 @@
   [self.client publishData:payload toTopic:[NSString stringWithFormat:@"%@/%@", self.baseTopic, topic] withQos:AtMostOnce retain:NO completionHandler:nil];
 }
 
+- (void)publish:(NSString *)topic andStringPayload:(NSString *)payload
+{
+  [self publish:topic andPayload:[payload dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
 - (void)subscribe:(NSString *)topic
 {
-  [self.client subscribe:[NSString stringWithFormat:@"%@/%@", self.baseTopic, topic] withCompletionHandler:nil];
+  NSString *_topic = [NSString stringWithFormat:@"%@/%@", self.baseTopic, topic];
+  NSLog(@"sub: %@", _topic);
+  [self.client subscribe:_topic withCompletionHandler:nil];
 }
 
 - (void)disconnect

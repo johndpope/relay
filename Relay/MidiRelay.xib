@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MidiRelayController">
+            <connections>
+                <outlet property="lastIn" destination="P86-X3-fIm" id="AWX-wx-dSx"/>
+                <outlet property="lastOut" destination="D5w-4M-IyA" id="hBy-Bt-ZqG"/>
+                <outlet property="status" destination="S6c-P2-dL1" id="XQE-3s-o0j"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="612" height="82"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="612" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D5w-4M-IyA">
+                        <rect key="frame" x="18" y="45" width="286" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last Out" id="NF4-6r-bO9">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P86-X3-fIm">
+                        <rect key="frame" x="308" y="45" width="286" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last In" id="9C1-pH-uEf">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-P2-dL1">
+                        <rect key="frame" x="18" y="20" width="576" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status" id="aGs-9c-CEv">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="S6c-P2-dL1" firstAttribute="top" secondItem="D5w-4M-IyA" secondAttribute="bottom" constant="8" id="30P-aQ-K86"/>
+                    <constraint firstItem="D5w-4M-IyA" firstAttribute="width" secondItem="P86-X3-fIm" secondAttribute="width" id="3QX-xd-aRc"/>
+                    <constraint firstItem="S6c-P2-dL1" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="Fsq-mz-OMl"/>
+                    <constraint firstAttribute="bottom" secondItem="S6c-P2-dL1" secondAttribute="bottom" constant="20" id="GND-hk-sXJ"/>
+                    <constraint firstItem="P86-X3-fIm" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="Lss-mE-eq4"/>
+                    <constraint firstAttribute="trailing" secondItem="P86-X3-fIm" secondAttribute="trailing" constant="20" id="YEE-cH-kcG"/>
+                    <constraint firstItem="D5w-4M-IyA" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="bIG-sw-Kw8"/>
+                    <constraint firstItem="P86-X3-fIm" firstAttribute="leading" secondItem="D5w-4M-IyA" secondAttribute="trailing" constant="8" id="doZ-Eu-cGD"/>
+                    <constraint firstAttribute="trailing" secondItem="S6c-P2-dL1" secondAttribute="trailing" constant="20" id="nih-yd-2Jd"/>
+                    <constraint firstItem="D5w-4M-IyA" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="wsF-xL-Kxo"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="254" y="107"/>
+        </window>
+    </objects>
+</document>

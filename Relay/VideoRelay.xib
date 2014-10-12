@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="VideoRelayStatusController">
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoRelayController">
             <connections>
                 <outlet property="preview" destination="Kj9-eY-gee" id="ckk-CE-hdb"/>
                 <outlet property="status" destination="E2i-oy-kZ9" id="ORu-LO-HjG"/>

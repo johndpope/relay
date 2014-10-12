@@ -11,10 +11,11 @@
 
 @class AppDelegate;
 
-@interface MidiRelayConfigurationController : NSViewController
+@interface MidiConfigurationController : NSViewController
 
 @property (weak) IBOutlet NSPopUpButton *source;
 @property (weak) IBOutlet NSPopUpButton *destination;
+@property (weak) IBOutlet NSTextField *baseTopic;
 
 - (IBAction)start:(id)sender;
 

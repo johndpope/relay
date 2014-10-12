@@ -8,17 +8,17 @@
 
 #import "AppDelegate.h"
 
-#import "MidiRelayConfigurationController.h"
-#import "VideoRelayConfigurationController.h"
+#import "MidiConfigurationController.h"
+#import "VideoConfigurationController.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  self.midiRelayController = [[MidiRelayConfigurationController alloc]
-                              initWithNibName:@"MidiRelayConfiguration" bundle:nil];
+  self.midiRelayController = [[MidiConfigurationController alloc]
+                              initWithNibName:@"MidiConfiguration" bundle:nil];
   self.midiRelayController.appDelegate = self;
-  self.videoRelayController = [[VideoRelayConfigurationController alloc]
-                               initWithNibName:@"VideoRelayConfiguration" bundle:nil];
+  self.videoRelayController = [[VideoConfigurationController alloc]
+                               initWithNibName:@"VideoConfiguration" bundle:nil];
   self.videoRelayController.appDelegate = self;
   
   [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiRelayController]];

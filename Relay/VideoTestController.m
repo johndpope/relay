@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 shiftr.io. All rights reserved.
 //
 
-#import "VideoRelayTestStatusController.h"
+#import "VideoTestController.h"
 
 #import "CommonClient.h"
 
-@implementation VideoRelayTestStatusController
+@implementation VideoTestController
 
 - (void)windowDidLoad
 {
@@ -35,12 +35,13 @@
 
 - (void)clientDidConnect
 {
+  self.status.stringValue = self.client.info;
   [self.client subscribe:@""];
 }
 
-- (void)didReceiveMessage:(MQTTMessage *)message
+- (void)didReceiveMessage:(CommonMessage *)message
 {
-  NSData *image = [[NSData alloc] initWithBase64EncodedData:message.payload options:0];
+  NSData *image = [[NSData alloc] initWithBase64EncodedData:message.message.payload options:0];
   self.preview.image = [[NSImage alloc] initWithData:image];
   self.status.stringValue = self.client.info;
 }

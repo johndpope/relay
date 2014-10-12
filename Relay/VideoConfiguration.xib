@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="VideoRelayConfigurationController">
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoConfigurationController">
             <connections>
+                <outlet property="baseTopic" destination="nf3-Ia-ZGF" id="Cif-qG-PeG"/>
                 <outlet property="source" destination="a7Y-Sw-AeG" id="Zbc-Yw-gop"/>
-                <outlet property="topic" destination="nf3-Ia-ZGF" id="7LZ-9y-j2x"/>
                 <outlet property="view" destination="c22-O7-iKe" id="bBk-ZF-ZxU"/>
             </connections>
         </customObject>
@@ -35,7 +35,7 @@
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n8Z-ns-KNF">
                     <rect key="frame" x="18" y="79" width="438" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Topic" id="wCl-5H-kem">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Base Topic" id="wCl-5H-kem">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -43,22 +43,12 @@
                 </textField>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-Ia-ZGF">
                     <rect key="frame" x="20" y="49" width="434" height="22"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="/video" placeholderString="" drawsBackground="YES" id="cnj-gO-ZrQ">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="/video" placeholderString="/video" drawsBackground="YES" id="cnj-gO-ZrQ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-JQ-ZBy">
-                    <rect key="frame" x="14" y="13" width="147" height="32"/>
-                    <buttonCell key="cell" type="push" title="Start Video Relay" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g3h-JB-tU9">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="start:" target="-2" id="MDf-zD-Yf8"/>
-                    </connections>
-                </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G9R-mj-dWh">
                     <rect key="frame" x="394" y="13" width="66" height="32"/>
                     <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ACh-94-O4e">
@@ -127,6 +117,16 @@
                         <binding destination="-2" name="value" keyPath="self.quality" id="4ae-NP-hfh"/>
                     </connections>
                 </slider>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-JQ-ZBy">
+                    <rect key="frame" x="14" y="13" width="70" height="32"/>
+                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g3h-JB-tU9">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="start:" target="-2" id="MDf-zD-Yf8"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="a7Y-Sw-AeG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="2FD-bF-7Xj"/>

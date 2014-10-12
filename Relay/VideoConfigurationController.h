@@ -11,10 +11,10 @@
 
 @class AppDelegate;
 
-@interface VideoRelayConfigurationController : NSViewController
+@interface VideoConfigurationController : NSViewController
 
 @property (weak) IBOutlet NSPopUpButton *source;
-@property (weak) IBOutlet NSTextField *topic;
+@property (weak) IBOutlet NSTextField *baseTopic;
 
 - (IBAction)start:(id)sender;
 - (IBAction)test:(id)sender;

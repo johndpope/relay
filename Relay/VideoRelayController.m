@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 shiftr.io. All rights reserved.
 //
 
-#import "VideoRelayStatusController.h"
+#import "VideoRelayController.h"
 
-@interface VideoRelayStatusController ()
+@interface VideoRelayController ()
 @property (strong) AVCaptureSession *captureSession;
 @property (strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong) AVCaptureVideoDataOutput* output;
 @end
 
-@implementation VideoRelayStatusController
+@implementation VideoRelayController
 
 - (void)windowDidLoad {
   [super windowDidLoad];

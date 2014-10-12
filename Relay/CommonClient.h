@@ -9,9 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <MQTTKit.h>
 
+@interface CommonMessage : NSObject
+
+@property (strong) MQTTMessage *message;
+@property (strong) NSString *topic;
+
+@end
+
 @protocol CommonClientDelegate <NSObject>
+
 - (void)clientDidConnect;
-- (void)didReceiveMessage:(MQTTMessage *)message;
+- (void)didReceiveMessage:(CommonMessage*)message;
+
 @end
 
 @interface CommonClient : NSObject
@@ -23,6 +32,7 @@
 - (void)connect;
 - (void)subscribe:(NSString*)topic;
 - (void)publish:(NSString*)topic andPayload:(NSData*)payload;
+- (void)publish:(NSString*)topic andStringPayload:(NSString*)payload;
 - (void)disconnect;
 - (NSString*)info;
 

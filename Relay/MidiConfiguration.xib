@@ -4,8 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MidiRelayConfigurationController">
+        <customObject id="-2" userLabel="File's Owner" customClass="MidiConfigurationController">
             <connections>
+                <outlet property="baseTopic" destination="xuH-bt-JqW" id="MqQ-cF-tHb"/>
                 <outlet property="destination" destination="ppt-GJ-uiJ" id="8vN-hu-Lpj"/>
                 <outlet property="source" destination="xtg-bW-lMX" id="8Kw-tq-AZZ"/>
                 <outlet property="view" destination="c22-O7-iKe" id="3pd-Bb-WSq"/>
@@ -14,21 +15,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="500" height="127"/>
+            <rect key="frame" x="0.0" y="0.0" width="500" height="170"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-jg-1cL">
-                    <rect key="frame" x="14" y="13" width="139" height="32"/>
-                    <buttonCell key="cell" type="push" title="Start MIDI Relay" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jh6-3G-xgu">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="start:" target="-2" id="9MC-rC-dHP"/>
-                    </connections>
-                </button>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ppt-GJ-uiJ">
-                    <rect key="frame" x="253" y="58" width="230" height="26"/>
+                    <rect key="frame" x="253" y="101" width="230" height="26"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="75V-aA-hhz">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -36,7 +27,7 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lKX-gf-87C">
-                    <rect key="frame" x="18" y="90" width="229" height="17"/>
+                    <rect key="frame" x="18" y="133" width="229" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Source" id="Rsw-Qh-K7k">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -44,7 +35,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MOA-5d-kCw">
-                    <rect key="frame" x="253" y="90" width="229" height="17"/>
+                    <rect key="frame" x="253" y="133" width="229" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Destination" id="Dgr-GR-44l">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -52,31 +43,64 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xtg-bW-lMX">
-                    <rect key="frame" x="18" y="58" width="230" height="26"/>
+                    <rect key="frame" x="18" y="101" width="230" height="26"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Xzn-Np-fr5">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="J0E-ik-GBb"/>
                     </popUpButtonCell>
                 </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-cK-WqP">
+                    <rect key="frame" x="18" y="79" width="464" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Base Topic" id="1aX-KU-bgM">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xuH-bt-JqW">
+                    <rect key="frame" x="20" y="49" width="460" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="/midi" placeholderString="/midi" drawsBackground="YES" id="PaD-Ut-laz">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-jg-1cL">
+                    <rect key="frame" x="14" y="13" width="70" height="32"/>
+                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jh6-3G-xgu">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="start:" target="-2" id="9MC-rC-dHP"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="lKX-gf-87C" firstAttribute="width" secondItem="MOA-5d-kCw" secondAttribute="width" id="36G-cv-hHU"/>
+                <constraint firstItem="xuH-bt-JqW" firstAttribute="top" secondItem="BsJ-cK-WqP" secondAttribute="bottom" constant="8" id="5cJ-Pt-Q1J"/>
+                <constraint firstAttribute="trailing" secondItem="BsJ-cK-WqP" secondAttribute="trailing" constant="20" id="5pF-8P-PCY"/>
+                <constraint firstItem="qQ8-jg-1cL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="7V8-qQ-VrZ"/>
                 <constraint firstItem="lKX-gf-87C" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="BbR-DO-rSl"/>
                 <constraint firstAttribute="trailing" secondItem="MOA-5d-kCw" secondAttribute="trailing" constant="20" id="GHo-Cs-rZo"/>
                 <constraint firstAttribute="trailing" secondItem="ppt-GJ-uiJ" secondAttribute="trailing" constant="20" id="IkQ-m9-GiK"/>
-                <constraint firstItem="qQ8-jg-1cL" firstAttribute="top" secondItem="xtg-bW-lMX" secondAttribute="bottom" constant="20" id="SE3-cC-LgC"/>
+                <constraint firstItem="xuH-bt-JqW" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="LMv-nP-bhd"/>
+                <constraint firstAttribute="trailing" secondItem="xuH-bt-JqW" secondAttribute="trailing" constant="20" id="P4Q-yO-max"/>
                 <constraint firstItem="xtg-bW-lMX" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="UeH-4y-4o9"/>
                 <constraint firstItem="MOA-5d-kCw" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="X1f-0j-Jhr"/>
+                <constraint firstAttribute="bottom" secondItem="qQ8-jg-1cL" secondAttribute="bottom" constant="20" id="aR4-iM-KJG"/>
+                <constraint firstItem="BsJ-cK-WqP" firstAttribute="top" secondItem="xtg-bW-lMX" secondAttribute="bottom" constant="8" id="dNf-qP-knt"/>
                 <constraint firstItem="ppt-GJ-uiJ" firstAttribute="top" secondItem="MOA-5d-kCw" secondAttribute="bottom" constant="8" id="fPG-zx-UY5"/>
+                <constraint firstItem="BsJ-cK-WqP" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="iab-vk-94z"/>
                 <constraint firstItem="MOA-5d-kCw" firstAttribute="leading" secondItem="lKX-gf-87C" secondAttribute="trailing" constant="10" id="kcU-43-QoH"/>
                 <constraint firstItem="xtg-bW-lMX" firstAttribute="width" secondItem="ppt-GJ-uiJ" secondAttribute="width" id="n2N-Ht-rgL"/>
                 <constraint firstItem="lKX-gf-87C" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="oT9-KX-J6F"/>
-                <constraint firstItem="qQ8-jg-1cL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="uoB-Pu-JIb"/>
+                <constraint firstItem="qQ8-jg-1cL" firstAttribute="top" secondItem="xuH-bt-JqW" secondAttribute="bottom" constant="8" id="pOh-ah-PQU"/>
                 <constraint firstItem="ppt-GJ-uiJ" firstAttribute="leading" secondItem="xtg-bW-lMX" secondAttribute="trailing" constant="10" id="wWn-Nr-MKm"/>
                 <constraint firstItem="xtg-bW-lMX" firstAttribute="top" secondItem="lKX-gf-87C" secondAttribute="bottom" constant="8" id="y6B-4Q-eeM"/>
             </constraints>
-            <point key="canvasLocation" x="251" y="-461.5"/>
+            <point key="canvasLocation" x="251" y="-440"/>
         </customView>
     </objects>
 </document>

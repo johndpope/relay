@@ -10,7 +10,7 @@
 
 #import "CommonClient.h"
 
-@interface VideoRelayTestStatusController : NSWindowController <NSWindowDelegate, CommonClientDelegate>
+@interface VideoTestController : NSWindowController <NSWindowDelegate, CommonClientDelegate>
 
 @property (weak) IBOutlet NSImageView *preview;
 @property (weak) IBOutlet NSTextField *status;

@@ -20,7 +20,7 @@
 - (IBAction)test:(id)sender;
 
 @property (weak) AppDelegate *appDelegate;
-@property (strong) NSMutableArray *createdControllers;
+@property (strong) NSMutableArray *createdRelays;
 @property NSNumber *framerate;
 @property NSNumber *quality;
 

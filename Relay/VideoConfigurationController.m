@@ -19,7 +19,7 @@
 {
   [super loadView];
   
-  self.createdControllers = [NSMutableArray array];
+  self.createdRelays = [NSMutableArray array];
   self.quality = @0.5;
   self.framerate = @10;
   
@@ -46,21 +46,21 @@
   controller.quality = self.quality.copy;
   [controller showWindow:self];
   
-  [self.createdControllers addObject:controller];
+  [self.createdRelays addObject:controller];
 }
 
 - (IBAction)test:(id)sender
 {
   VideoTestController* controller = [[VideoTestController alloc] initWithWindowNibName:@"VideoTest"];
   
-    CommonClient *client = [[CommonClient alloc] init];
+  CommonClient *client = [[CommonClient alloc] init];
   client.uri = [NSURL URLWithString:self.appDelegate.namespaceURI];
   client.baseTopic = self.baseTopic.stringValue.copy;
   
   controller.client = client;
   [controller showWindow:self];
   
-  [self.createdControllers addObject:controller];
+  [self.createdRelays addObject:controller];
 }
 
 @end

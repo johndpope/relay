@@ -17,8 +17,8 @@
 @property (weak) IBOutlet NSTextField *uriTextField;
 @property (weak) IBOutlet NSTabView *tabView;
 
-@property (strong) MidiConfigurationController *midiRelayController;
-@property (strong) VideoConfigurationController *videoRelayController;
+@property (strong) MidiConfigurationController *midiConfigurationController;
+@property (strong) VideoConfigurationController *videoConfigurationController;
 
 - (NSString*)namespaceURI;
 

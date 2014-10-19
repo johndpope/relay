@@ -64,7 +64,7 @@
   [self.captureSession addOutput:self.output];
   
   if(error) {
-    NSLog(@"%@", error);
+    [[NSAlert alertWithError:error] runModal];
   } else {
     [self.captureSession startRunning];
   }

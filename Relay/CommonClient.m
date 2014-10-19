@@ -9,6 +9,17 @@
 #import "CommonClient.h"
 
 @implementation CommonMessage
+
+- (NSString *)payloadString
+{
+  return self.message.payloadString;
+}
+
+- (NSData *)payloadData
+{
+  return self.message.payload;
+}
+
 @end
 
 @interface CommonClient ()

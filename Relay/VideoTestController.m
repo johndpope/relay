@@ -41,7 +41,7 @@
 
 - (void)didReceiveMessage:(CommonMessage *)message
 {
-  NSData *image = [[NSData alloc] initWithBase64EncodedData:message.message.payload options:0];
+  NSData *image = [[NSData alloc] initWithBase64EncodedData:message.payloadData options:0];
   self.preview.image = [[NSImage alloc] initWithData:image];
   self.status.stringValue = self.client.info;
 }

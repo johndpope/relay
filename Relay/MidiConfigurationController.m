@@ -13,8 +13,6 @@
 
 @implementation MidiConfigurationController
 
-NSString *SKIP = @"skip";
-
 - (void)loadView
 {
   [super loadView];
@@ -28,13 +26,13 @@ NSString *SKIP = @"skip";
     [self.source addItemWithTitle:source.name];
   }
   
-  [self.source addItemWithTitle:SKIP];
+  [self.source addItemWithTitle:@"skip"];
 
   for (MIKMIDIDestinationEndpoint *destination in [[MIKMIDIDeviceManager sharedDeviceManager] virtualDestinations]) {
     [self.destination addItemWithTitle:destination.name];
   }
   
-  [self.destination addItemWithTitle:SKIP];
+  [self.destination addItemWithTitle:@"skip"];
 }
 
 - (IBAction)start:(id)sender
@@ -42,11 +40,11 @@ NSString *SKIP = @"skip";
   MIKMIDISourceEndpoint *source;
   MIKMIDIDestinationEndpoint *destination;
   
-  if(![self.source.selectedItem.title isEqualToString:SKIP]) {
+  if(![self.source.selectedItem.title isEqualToString:@"skip"]) {
     source = [[[MIKMIDIDeviceManager sharedDeviceManager] virtualSources] objectAtIndex:self.source.indexOfSelectedItem];
   }
   
-  if(![self.destination.selectedItem.title isEqualToString:SKIP]) {
+  if(![self.destination.selectedItem.title isEqualToString:@"skip"]) {
     destination = [[[MIKMIDIDeviceManager sharedDeviceManager] virtualDestinations] objectAtIndex:self.destination.indexOfSelectedItem];
   }
   

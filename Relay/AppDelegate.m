@@ -13,19 +13,15 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  self.midiRelayController = [[MidiConfigurationController alloc]
-                              initWithNibName:@"MidiConfiguration" bundle:nil];
-  self.midiRelayController.appDelegate = self;
-  self.videoRelayController = [[VideoConfigurationController alloc]
-                               initWithNibName:@"VideoConfiguration" bundle:nil];
-  self.videoRelayController.appDelegate = self;
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+  self.midiConfigurationController = [[MidiConfigurationController alloc] initWithNibName:@"MidiConfiguration" bundle:nil];
+  self.midiConfigurationController.appDelegate = self;
+  self.videoConfigurationController = [[VideoConfigurationController alloc] initWithNibName:@"VideoConfiguration" bundle:nil];
+  self.videoConfigurationController.appDelegate = self;
   
-  [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiRelayController]];
-  [self.tabView addTabViewItem:[self createTab:@"Video" withController:self.videoRelayController]];
-  
-  // TODO: Get rid of that hack:
-  [self.tabView selectLastTabViewItem:self];
+  [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiConfigurationController]];
+  [self.tabView addTabViewItem:[self createTab:@"Video" withController:self.videoConfigurationController]];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {}

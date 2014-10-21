@@ -14,6 +14,9 @@
 @property (strong) MQTTMessage *message;
 @property (strong) NSString *topic;
 
+- (NSData*)payloadData;
+- (NSString*)payloadString;
+
 @end
 
 @protocol CommonClientDelegate <NSObject>

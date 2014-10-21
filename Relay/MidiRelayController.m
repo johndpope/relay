@@ -62,7 +62,7 @@
   if(matches1.count == 1) {
     UInt8 channel = [[matches1[0][1] text] integerValue];
     NSUInteger controller = [[matches1[0][2] text] integerValue];
-    NSUInteger value = [message.message.payloadString integerValue];
+    NSUInteger value = [message.payloadString integerValue];
     
     self.lastIn.stringValue = [NSString stringWithFormat:@"CC %hhu/%lu: %lu", channel, controller, value];
     
@@ -77,7 +77,7 @@
   if(matches2.count == 1) {
     UInt8 channel = [[matches2[0][1] text] integerValue];
     NSUInteger note = [[matches2[0][2] text] integerValue];
-    NSUInteger velocity = [message.message.payloadString integerValue];
+    NSUInteger velocity = [message.payloadString integerValue];
     
     self.lastIn.stringValue = [NSString stringWithFormat:@"N+ %hhu/%lu: %lu", channel, note, velocity];
     
@@ -92,7 +92,7 @@
   if(matches3.count == 1) {
     UInt8 channel = [[matches3[0][1] text] integerValue];
     NSUInteger note = [[matches3[0][2] text] integerValue];
-    NSUInteger velocity = [message.message.payloadString integerValue];
+    NSUInteger velocity = [message.payloadString integerValue];
     
     self.lastIn.stringValue = [NSString stringWithFormat:@"N- %hhu/%lu: %lu", channel, note, velocity];
     

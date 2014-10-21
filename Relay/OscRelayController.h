@@ -1,5 +1,5 @@
 //
-//  MidiRelayStatusController.h
+//  OscRelayStatusController.h
 //  Relay
 //
 //  Created by Joël Gähwiler on 05.10.14.

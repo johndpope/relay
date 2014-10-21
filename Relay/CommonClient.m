@@ -1,5 +1,5 @@
 //
-//  Client.m
+//  CommonClient.m
 //  Relay
 //
 //  Created by Joël Gähwiler on 06.10.14.

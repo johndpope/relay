@@ -20,8 +20,8 @@
   [super loadView];
   
   self.createdRelays = [NSMutableArray array];
-  self.quality = @0.5;
-  self.framerate = @10;
+  self.quality = @0.3;
+  self.framerate = @5;
   
   [self.source removeAllItems];
   

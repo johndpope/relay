@@ -142,10 +142,10 @@
 
 - (NSString *)info
 {
-  return [NSString stringWithFormat:@"[%@] LM: %@ - TM: %ld - TB: %@ - AS: %@/s",
+  return [NSString stringWithFormat:@"[%@] Count: %ld - Last: %@ - All: %@ - Avg: %@/s",
     self.state,
-    [self.formatter stringFromByteCount:self.lastMessageSize],
     self.transferedMessages,
+    [self.formatter stringFromByteCount:self.lastMessageSize],
     [self.formatter stringFromByteCount:self.transferedBytes],
     [self.formatter stringFromByteCount:self.averageTransfer]
   ];

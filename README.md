@@ -4,7 +4,7 @@ Relay is a native Mac OSX application that allows you to relay various devices, 
 
 [Download version 1.0 here](https://github.com/shiftr-io/relay/releases/download/v1.0/Relay.app.zip)
 
-![Screenshot](http://joel-github-static.s3.amazonaws.com/shiftr-io-relay/screenshot.png)
+![Screenshot](http://joel-github-static.s3.amazonaws.com/shiftr-io-relay/app.png)
 
 ## Modules
 

@@ -18,6 +18,8 @@
 
 - (IBAction)start:(id)sender;
 
+@property (weak) AppDelegate *appDelegate;
 @property (strong) NSMutableArray *createdRelays;
+@property (strong) NSMutableArray *foundPeripherals;
 
 @end

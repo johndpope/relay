@@ -24,6 +24,7 @@
   self.oscConfigurationController = [[OscConfigurationController alloc] initWithNibName:@"OscConfiguration" bundle:nil];
   self.oscConfigurationController.appDelegate = self;
   self.bleConfigurationController = [[BleConfigurationController alloc] initWithNibName:@"BleConfiguration" bundle:nil];
+  self.bleConfigurationController.appDelegate = self;
   
   [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiConfigurationController]];
   [self.tabView addTabViewItem:[self createTab:@"Video" withController:self.videoConfigurationController]];

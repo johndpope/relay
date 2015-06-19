@@ -31,6 +31,9 @@
 		5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5276066019DD6A2A00E50DB3 /* AVFoundation.framework */; };
 		52C6A2A81B34632700D0295C /* BleConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C6A2A61B34632700D0295C /* BleConfigurationController.m */; };
 		52C6A2A91B34632700D0295C /* BleConfiguration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C6A2A71B34632700D0295C /* BleConfiguration.xib */; };
+		52C6A2AD1B346A3500D0295C /* BleRelayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C6A2AB1B346A3500D0295C /* BleRelayController.m */; };
+		52C6A2B21B346BDA00D0295C /* BleRelay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C6A2B11B346BDA00D0295C /* BleRelay.xib */; };
+		52C6A2B41B3470D200D0295C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C6A2B31B3470D200D0295C /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,10 @@
 		52C6A2A51B34632700D0295C /* BleConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleConfigurationController.h; sourceTree = "<group>"; };
 		52C6A2A61B34632700D0295C /* BleConfigurationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleConfigurationController.m; sourceTree = "<group>"; };
 		52C6A2A71B34632700D0295C /* BleConfiguration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BleConfiguration.xib; sourceTree = "<group>"; };
+		52C6A2AA1B346A3500D0295C /* BleRelayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleRelayController.h; sourceTree = "<group>"; };
+		52C6A2AB1B346A3500D0295C /* BleRelayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleRelayController.m; sourceTree = "<group>"; };
+		52C6A2B11B346BDA00D0295C /* BleRelay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BleRelay.xib; sourceTree = "<group>"; };
+		52C6A2B31B3470D200D0295C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C6A2B41B3470D200D0295C /* CoreBluetooth.framework in Frameworks */,
 				524C184C19F6F5380096C200 /* libc++.dylib in Frameworks */,
 				5276066219DD6A2A00E50DB3 /* AVFoundation.framework in Frameworks */,
 				2BB04B5F75364C99B2900622 /* libPods.a in Frameworks */,
@@ -92,6 +100,7 @@
 		2220CFCEDE024AA2B84CDD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52C6A2B31B3470D200D0295C /* CoreBluetooth.framework */,
 				524C184B19F6F5380096C200 /* libc++.dylib */,
 				5276066019DD6A2A00E50DB3 /* AVFoundation.framework */,
 				5276066119DD6A2A00E50DB3 /* AVKit.framework */,
@@ -123,6 +132,7 @@
 				52735D3619F4418900A8F08D /* OscConfiguration.xib */,
 				52735D3919F4472F00A8F08D /* OscRelay.xib */,
 				52C6A2A71B34632700D0295C /* BleConfiguration.xib */,
+				52C6A2B11B346BDA00D0295C /* BleRelay.xib */,
 				524A7E2A19D3412300BD55BE /* Images.xcassets */,
 			);
 			name = Interfaces;
@@ -147,6 +157,8 @@
 				52735D3C19F4475900A8F08D /* OscRelayController.m */,
 				52C6A2A51B34632700D0295C /* BleConfigurationController.h */,
 				52C6A2A61B34632700D0295C /* BleConfigurationController.m */,
+				52C6A2AA1B346A3500D0295C /* BleRelayController.h */,
+				52C6A2AB1B346A3500D0295C /* BleRelayController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +278,7 @@
 				5230FF8419E1961C00646BC1 /* Application.xib in Resources */,
 				5230FFA119E1A79400646BC1 /* VideoRelay.xib in Resources */,
 				52C6A2A91B34632700D0295C /* BleConfiguration.xib in Resources */,
+				52C6A2B21B346BDA00D0295C /* BleRelay.xib in Resources */,
 				52735D3A19F4472F00A8F08D /* OscRelay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +334,7 @@
 				52735D3719F4418900A8F08D /* OscConfigurationController.m in Sources */,
 				52C6A2A81B34632700D0295C /* BleConfigurationController.m in Sources */,
 				5260701C19E1D8CD00421B5B /* VideoTestController.m in Sources */,
+				52C6A2AD1B346A3500D0295C /* BleRelayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

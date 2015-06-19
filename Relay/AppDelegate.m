@@ -11,6 +11,7 @@
 #import "MidiConfigurationController.h"
 #import "VideoConfigurationController.h"
 #import "OscConfigurationController.h"
+#import "BleConfigurationController.h"
 
 @implementation AppDelegate
 
@@ -22,10 +23,12 @@
   self.videoConfigurationController.appDelegate = self;
   self.oscConfigurationController = [[OscConfigurationController alloc] initWithNibName:@"OscConfiguration" bundle:nil];
   self.oscConfigurationController.appDelegate = self;
+  self.bleConfigurationController = [[BleConfigurationController alloc] initWithNibName:@"BleConfiguration" bundle:nil];
   
   [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiConfigurationController]];
   [self.tabView addTabViewItem:[self createTab:@"Video" withController:self.videoConfigurationController]];
   [self.tabView addTabViewItem:[self createTab:@"OSC" withController:self.oscConfigurationController]];
+  [self.tabView addTabViewItem:[self createTab:@"BLE" withController:self.bleConfigurationController]];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {}

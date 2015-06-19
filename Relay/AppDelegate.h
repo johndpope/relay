@@ -11,6 +11,7 @@
 @class MidiConfigurationController;
 @class VideoConfigurationController;
 @class OscConfigurationController;
+@class BleConfigurationController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -21,6 +22,7 @@
 @property (strong) MidiConfigurationController *midiConfigurationController;
 @property (strong) VideoConfigurationController *videoConfigurationController;
 @property (strong) OscConfigurationController *oscConfigurationController;
+@property (strong) BleConfigurationController *bleConfigurationController;
 
 - (NSString*)namespaceURI;
 

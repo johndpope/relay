@@ -14,8 +14,11 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTabView *connectTabView;
+@property (weak) IBOutlet NSTextField *usernameTextField;
+@property (weak) IBOutlet NSTextField *passwordTextField;
 @property (weak) IBOutlet NSTextField *uriTextField;
-@property (weak) IBOutlet NSTabView *tabView;
+@property (weak) IBOutlet NSTabView *relayTabView;
 
 @property (strong) MidiConfigurationController *midiConfigurationController;
 @property (strong) OscConfigurationController *oscConfigurationController;

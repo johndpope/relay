@@ -20,8 +20,8 @@
   self.oscConfigurationController = [[OscConfigurationController alloc] initWithNibName:@"OscConfiguration" bundle:nil];
   self.oscConfigurationController.appDelegate = self;
   
-  [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiConfigurationController]];
-  [self.tabView addTabViewItem:[self createTab:@"OSC" withController:self.oscConfigurationController]];
+  [self.relayTabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiConfigurationController]];
+  [self.relayTabView addTabViewItem:[self createTab:@"OSC" withController:self.oscConfigurationController]];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {}
@@ -36,7 +36,11 @@
 
 - (NSString *)namespaceURI
 {
-  return self.uriTextField.stringValue;
+  if([self.connectTabView.selectedTabViewItem.label isEqualToString:@"shiftr.io"]) {
+    return [NSString stringWithFormat:@"mqtt://%@:%@@connect.shiftr.io", self.usernameTextField.stringValue, self.passwordTextField.stringValue];
+  } else {
+    return self.uriTextField.stringValue;
+  }
 }
 
 @end

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 #import "MidiConfigurationController.h"
-#import "VideoConfigurationController.h"
 #import "OscConfigurationController.h"
 
 @implementation AppDelegate
@@ -18,13 +17,10 @@
 {
   self.midiConfigurationController = [[MidiConfigurationController alloc] initWithNibName:@"MidiConfiguration" bundle:nil];
   self.midiConfigurationController.appDelegate = self;
-  self.videoConfigurationController = [[VideoConfigurationController alloc] initWithNibName:@"VideoConfiguration" bundle:nil];
-  self.videoConfigurationController.appDelegate = self;
   self.oscConfigurationController = [[OscConfigurationController alloc] initWithNibName:@"OscConfiguration" bundle:nil];
   self.oscConfigurationController.appDelegate = self;
   
   [self.tabView addTabViewItem:[self createTab:@"MIDI" withController:self.midiConfigurationController]];
-  [self.tabView addTabViewItem:[self createTab:@"Video" withController:self.videoConfigurationController]];
   [self.tabView addTabViewItem:[self createTab:@"OSC" withController:self.oscConfigurationController]];
 }
 

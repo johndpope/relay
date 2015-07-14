@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @class MidiConfigurationController;
-@class VideoConfigurationController;
 @class OscConfigurationController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
@@ -19,7 +18,6 @@
 @property (weak) IBOutlet NSTabView *tabView;
 
 @property (strong) MidiConfigurationController *midiConfigurationController;
-@property (strong) VideoConfigurationController *videoConfigurationController;
 @property (strong) OscConfigurationController *oscConfigurationController;
 
 - (NSString*)namespaceURI;

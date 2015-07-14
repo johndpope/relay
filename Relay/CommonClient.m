@@ -142,7 +142,7 @@
 
 - (NSString *)info
 {
-  return [NSString stringWithFormat:@"[%@] Count: %ld - Last: %@ - All: %@ - Avg: %@/s",
+  return [NSString stringWithFormat:@"Client: %@ - Msgs: %ld - Last: %@ - All: %@ - Avg: %@/s",
     self.state,
     self.transferedMessages,
     [self.formatter stringFromByteCount:self.lastMessageSize],

@@ -24,8 +24,8 @@
   [super windowDidLoad];
   
   self.status.stringValue = self.client.info;
-  self.lastOut.stringValue = @"";
-  self.lastIn.stringValue = @"";
+  self.lastOut.stringValue = @"nothing outgoing";
+  self.lastIn.stringValue = @"nothing incoming";
   
   self.client.delegate = self;
   [self.client connect];

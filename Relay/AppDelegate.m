@@ -37,7 +37,7 @@
 - (NSString *)namespaceURI
 {
   if([self.connectTabView.selectedTabViewItem.label isEqualToString:@"shiftr.io"]) {
-    return [NSString stringWithFormat:@"mqtt://%@:%@@connect.shiftr.io", self.usernameTextField.stringValue, self.passwordTextField.stringValue];
+    return [NSString stringWithFormat:@"mqtt://%@:%@@broker.shiftr.io", self.usernameTextField.stringValue, self.passwordTextField.stringValue];
   } else {
     return self.uriTextField.stringValue;
   }
